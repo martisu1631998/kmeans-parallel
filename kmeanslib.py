@@ -1,3 +1,9 @@
+"""
+Code by: Martí Surrallés Gacia, 1631998
+Parallel Programming
+Artificial Intelligence (UAB)
+"""
+
 from ctypes import *
 
 lib_path = '/home/alumnos/ppia/ppia-12/Escritorio/prac1/kmeanslib.so'
