@@ -52,7 +52,7 @@ def getChecksum(centroids, k):
     sum = lib.getChecksum(p_centroids, k)
     return int(sum)
 
-def find_closest_centroid(p, centroids, num_clusters):
+def find_closest_centroid(p, centroids, num_clusters): # Maybe we don't need it
     p_p = pointer(p)
     p_centroids = pointer(centroids)
     num_clusters = c_uint8(num_clusters)

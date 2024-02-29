@@ -258,7 +258,8 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 }
 
 /*
-Just for checking if the python library works*/
+Just for checking if the python library works
+*/
 void say_hello( char *name){
 	printf("Hello %s!\n", name);
 }
