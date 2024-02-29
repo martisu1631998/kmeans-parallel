@@ -257,6 +257,8 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 	printf("Number of K-Means iterations: %d\n\n", i);
 }
 
+/*
+Just for checking if the python library works*/
 void say_hello( char *name){
 	printf("Hello %s!\n", name);
 }
