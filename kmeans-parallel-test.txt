@@ -1,0 +1,47 @@
+kmeanslib_parallel.c: En la función ‘kmeans’:
+kmeanslib_parallel.c:199:22: error: expected ‘#pragma omp’ clause before ‘{’ token
+  #pragma omp parallel{
+                      ^
+kmeanslib_parallel.c:200:2: error: expected expression before ‘uint8_t’
+  uint8_t condition, changed, closest;
+  ^~~~~~~
+kmeanslib_parallel.c:233:43: error: ‘closest’ no se declaró aquí (primer uso en esta función); ¿quiso decir ‘close’?
+   #pragma omp for reduction(+: centroides[closest].media_r,
+                                           ^~~~~~~
+                                           close
+kmeanslib_parallel.c:233:43: nota: cada identificador sin declarar se reporta sólo una vez para cada función en el que aparece
+kmeanslib_parallel.c:233:51: error: expected ‘)’ before ‘.’ token
+   #pragma omp for reduction(+: centroides[closest].media_r,
+                            ~                      ^
+                                                   )
+kmeanslib_parallel.c:234:11: error: for statement expected before ‘centroides’
+           centroides[closest].media_g,
+           ^~~~~~~~~~
+kmeanslib_parallel.c:236:41: error: expected ‘;’ before ‘)’ token
+           centroides[closest].num_puntos) private(closest)
+                                         ^
+                                         ;
+kmeanslib_parallel.c:236:41: error: expected statement before ‘)’ token
+kmeanslib_parallel.c:236:43: aviso: declaración implícita de la función ‘private’; ¿quiso decir ‘pwrite’? [-Wimplicit-function-declaration]
+           centroides[closest].num_puntos) private(closest)
+                                           ^~~~~~~
+                                           pwrite
+kmeanslib_parallel.c:236:59: error: expected ‘;’ before ‘for’
+           centroides[closest].num_puntos) private(closest)
+                                                           ^
+                                                           ;
+   for(j = 0; j < num_pixels; j++)
+   ~~~                                                      
+kmeanslib_parallel.c:248:27: error: ‘changed’ no se declaró aquí (primer uso en esta función); ¿quiso decir ‘vhangup’?
+   #pragma omp for private(changed, condition)
+                           ^~~~~~~
+                           vhangup
+kmeanslib_parallel.c:248:36: error: ‘condition’ no se declaró aquí (primer uso en esta función)
+   #pragma omp for private(changed, condition)
+                                    ^~~~~~~~~
+kmeanslib_parallel.c: En el nivel principal:
+kmeanslib_parallel.c:270:1: error: expected identifier or ‘(’ before ‘}’ token
+ }
+ ^
+serial
+Workload failed: No existe el fichero o el directorio
