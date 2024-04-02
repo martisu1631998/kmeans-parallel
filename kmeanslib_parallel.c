@@ -145,8 +145,7 @@ uint32_t getChecksum(cluster* centroids, uint8_t k){
   uint32_t i,j;
   uint32_t sum = 0;
   
-  # pragma omp parallel for reduction (+: sum) 
-  for (i = 0; i < k; i++) // Paralalelitzable amb reduction
+  for (i = 0; i < k; i++) 
   {
     printf("Centroide %u : R[%u]\tG[%u]\tB[%u]\n", i, centroids[i].r, centroids[i].g, centroids[i].b);
     sum += (centroids[i].r * centroids[i].g * centroids[i].b);
@@ -168,7 +167,7 @@ uint8_t find_closest_centroid(rgb* p, cluster* centroids, uint8_t num_clusters){
 	uint32_t dis[num_clusters];
 	uint8_t closest = 0, j;
 	int16_t diffR, diffG, diffB;	
-	#pragma omp for private(diffR, diffG, diffB)
+	
 	for(j = 0; j < num_clusters; j++) 
 	{
 		diffR = centroids[j].r - p->r;
