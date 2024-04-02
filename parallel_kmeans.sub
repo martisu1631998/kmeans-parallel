@@ -1,0 +1,14 @@
+#!/bin/bash
+#SBATCH --job-name=openmp
+#SBATCH -N 1
+##SBATCH -n 1
+#SBATCH --partition=nodo.q
+#SBATCH --exclusive
+#SBATCH --output=kmeans.txt
+
+
+gcc -fopenmp kmeans.c kmeanslib.c -o kmeans -lm # compile
+# export OMP_NUM_THREADS=2        # set number of threads
+echo serial
+perf stat ./prod_v             # execute with perf profiler to measure time
+

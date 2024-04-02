@@ -201,7 +201,7 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 	
 	// Init centroids	
 	printf("STEP 2: Init centroids\n");
-	for(i = 0; i < k; i++) 
+	for(i = 0; i < k; i++)
 	{
 		random_num = rand() % num_pixels;
 		centroides[i].r = pixels[random_num].r;
@@ -255,4 +255,8 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		i++;
 	} while(condition);
 	printf("Number of K-Means iterations: %d\n\n", i);
+}
+
+int main(){
+
 }

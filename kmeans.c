@@ -14,7 +14,6 @@
  *
  */
 int main(int argc, char *argv[]) {
-	
 	uint8_t closest, test, k;
 	uint32_t i, j;
 //	FILE *fp;
