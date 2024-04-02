@@ -4,11 +4,11 @@
 ##SBATCH -n 1
 #SBATCH --partition=nodo.q
 #SBATCH --exclusive
-#SBATCH --output=kmeans.txt
+#SBATCH --output=kmeans-test.txt
 
 
-gcc -fopenmp kmeans.c kmeanslib.c -o kmeans -lm # compile
+gcc -fopenmp -Ofast kmeans.c kmeanslib.c -o kmeans -lm # compile
 # export OMP_NUM_THREADS=2        # set number of threads
 echo serial
-perf stat ./prod_v             # execute with perf profiler to measure time
+perf stat ./kmeans test 4 imagen.bmp       # execute with perf profiler to measure time
 
