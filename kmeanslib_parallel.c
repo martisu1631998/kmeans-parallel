@@ -227,11 +227,18 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		for(j = 0; j < num_pixels; j++) 
     	{
 			closest = find_closest_centroid(&pixels[j], centroides, k);
+			
+
 			centroides[closest].media_r += pixels[j].r;
 			centroides[closest].media_g += pixels[j].g;
 			centroides[closest].media_b += pixels[j].b;
 			centroides[closest].num_puntos++;
 		}
+
+		centroides[closest].media_r += pixels[j].r;
+		centroides[closest].media_g += pixels[j].g;
+		centroides[closest].media_b += pixels[j].b;
+		centroides[closest].num_puntos++;
 
 		// Update centroids & check stop condition
 		condition = 0;
