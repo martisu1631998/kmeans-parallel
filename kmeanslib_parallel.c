@@ -223,6 +223,8 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		}
    
 		// Find closest cluster for each pixel
+		
+
 		#pragma omp for reduction(+: ) private(closest)
 		for(j = 0; j < num_pixels; j++) 
     	{
@@ -235,10 +237,10 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 			centroides[closest].num_puntos++;
 		}
 
-		centroides[closest].media_r += pixels[j].r;
-		centroides[closest].media_g += pixels[j].g;
-		centroides[closest].media_b += pixels[j].b;
-		centroides[closest].num_puntos++;
+		centroides[closest].media_r = pixels[j].r;
+		centroides[closest].media_g = pixels[j].g;
+		centroides[closest].media_b = pixels[j].b;
+		centroides[closest].num_puntos = ;
 
 		// Update centroids & check stop condition
 		condition = 0;
