@@ -141,11 +141,11 @@ int write_file(char *name, image *mImage, cluster*centroids, uint8_t k){
  * Checksum is the total sum of the product (r,g,b) of the centroids final value.
  *
  */
-uint32_t getChecksum(cluster* centroids, uint8_t k){
+uint32_t getChecksum(cluster* centroids, uint8_t k){ 
   uint32_t i,j;
   uint32_t sum = 0;
   
-  for (i = 0; i < k; i++)
+  for (i = 0; i < k; i++) 
   {
     printf("Centroide %u : R[%u]\tG[%u]\tB[%u]\n", i, centroids[i].r, centroids[i].g, centroids[i].b);
     sum += (centroids[i].r * centroids[i].g * centroids[i].b);
@@ -167,7 +167,7 @@ uint8_t find_closest_centroid(rgb* p, cluster* centroids, uint8_t num_clusters){
 	uint32_t dis[num_clusters];
 	uint8_t closest = 0, j;
 	int16_t diffR, diffG, diffB;	
-
+	
 	for(j = 0; j < num_clusters; j++) 
 	{
 		diffR = centroids[j].r - p->r;
@@ -175,7 +175,6 @@ uint8_t find_closest_centroid(rgb* p, cluster* centroids, uint8_t num_clusters){
 		diffB = centroids[j].b - p->b; 
 		// No sqrt required.
 		dis[j] = diffR*diffR + diffG*diffG + diffB*diffB;
-		
 		if(dis[j] < min) 
 		{
 			min = dis[j];
@@ -201,7 +200,7 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 	
 	// Init centroids	
 	printf("STEP 2: Init centroids\n");
-	for(i = 0; i < k; i++) 
+	for(i = 0; i < k; i++)
 	{
 		random_num = rand() % num_pixels;
 		centroides[i].r = pixels[random_num].r;
@@ -224,14 +223,24 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		}
    
 		// Find closest cluster for each pixel
+		
+
+		#pragma omp for reduction(+: ) private(closest)
 		for(j = 0; j < num_pixels; j++) 
     	{
 			closest = find_closest_centroid(&pixels[j], centroides, k);
+			
+
 			centroides[closest].media_r += pixels[j].r;
 			centroides[closest].media_g += pixels[j].g;
 			centroides[closest].media_b += pixels[j].b;
 			centroides[closest].num_puntos++;
 		}
+
+		centroides[closest].media_r = pixels[j].r;
+		centroides[closest].media_g = pixels[j].g;
+		centroides[closest].media_b = pixels[j].b;
+		centroides[closest].num_puntos = ;
 
 		// Update centroids & check stop condition
 		condition = 0;
@@ -255,4 +264,8 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		i++;
 	} while(condition);
 	printf("Number of K-Means iterations: %d\n\n", i);
+	}
+
+int main(){
+
 }
