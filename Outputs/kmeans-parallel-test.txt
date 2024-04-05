@@ -5,25 +5,25 @@ WIDTH : 3840
 HEIGHT: 2160
 LENGHT: 8294400
 
-./Outputs/kmeans_parallel: Violación de segmento
+Outputs/kmeans_parallel: Violación de segmento
 
- Performance counter stats for './Outputs/kmeans_parallel test 4 imagen.bmp':
+ Performance counter stats for 'Outputs/kmeans_parallel test 32 imagen.bmp':
 
-            163,06 msec task-clock:u                     #    0,398 CPUs utilized             
+            188,29 msec task-clock:u                     #    0,585 CPUs utilized             
                  0      context-switches:u               #    0,000 /sec                      
                  0      cpu-migrations:u                 #    0,000 /sec                      
-               531      page-faults:u                    #    3,256 K/sec                     
-       339.970.617      cycles:u                         #    2,085 GHz                         (66,08%)
-        25.714.024      stalled-cycles-frontend:u        #    7,56% frontend cycles idle        (67,15%)
-        50.669.732      stalled-cycles-backend:u         #   14,90% backend cycles idle         (68,55%)
-       555.896.077      instructions:u                   #    1,64  insn per cycle            
-                                                  #    0,09  stalled cycles per insn     (63,87%)
-       158.505.064      branches:u                       #  972,068 M/sec                       (65,37%)
-         1.319.261      branch-misses:u                  #    0,83% of all branches             (68,98%)
+               530      page-faults:u                    #    2,815 K/sec                     
+       436.259.517      cycles:u                         #    2,317 GHz                         (66,25%)
+       156.741.871      stalled-cycles-frontend:u        #   35,93% frontend cycles idle        (66,53%)
+         3.176.733      stalled-cycles-backend:u         #    0,73% backend cycles idle         (67,01%)
+       553.686.378      instructions:u                   #    1,27  insn per cycle            
+                                                  #    0,28  stalled cycles per insn     (67,05%)
+       156.879.820      branches:u                       #  833,203 M/sec                       (66,73%)
+           231.215      branch-misses:u                  #    0,15% of all branches             (66,42%)
 
-       0,409734322 seconds time elapsed
+       0,322048889 seconds time elapsed
 
-       0,135782000 seconds user
-       0,025811000 seconds sys
+       0,166606000 seconds user
+       0,020543000 seconds sys
 
 
