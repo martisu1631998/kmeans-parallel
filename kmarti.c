@@ -236,7 +236,7 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 
 		
 		// Find closest cluster for each pixel
-		// int closest_by_pixel[num_pixels]
+		int closest_by_pixel[num_pixels];
 		// #pragma omp parallel
 		// {
 		// #pragma omp for
@@ -249,7 +249,7 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		for (int color; color<3; color++){
 			// #pragma omp for reduction(+:means[color])
 			for (j=0; j<num_pixels; j++){
-				closest = cosest_by_pixel[j]
+				closest = closest_by_pixel[j];
 				means[color][closest] += pixels[j].r;
 			}
 		}
