@@ -10,10 +10,10 @@
 
 ##gcc -Ofast kmeans.c kmeanslib.c -o Outputs/kmeans_sequential -lm # Sequential
 
-gcc -fopenmp -Ofast kmeans.c kmeanslib_parallel.c -o Outputs/kmeans_parallel -lm # Parallel
+gcc -fopenmp -Ofast kmeans.c kmeanslib_parallel.c -o Executables/kmeans_parallel -lm # Parallel
 export OMP_NUM_THREADS=6 # Set number of threads, only for parallel
 
 echo Nova execució
 
 ##perf stat Outputs/kmeans_sequential test 4 imagen.bmp # Sequential. Execute with perf profiler to measure time
-perf stat Outputs/kmeans_parallel test 32 imagen.bmp # Parallel. Execute with perf profiler to measure time
+perf stat Executables/kmeans_parallel test 4 imagen.bmp # Parallel. Execute with perf profiler to measure time
