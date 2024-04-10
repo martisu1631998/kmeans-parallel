@@ -4,17 +4,12 @@
 ##SBATCH -n 1
 #SBATCH --partition=nodo.q
 #SBATCH --exclusive
+#SBATCH --output=kmeans-seq-test.txt 
 
-##SBATCH --output=kmeans-sequential-test.txt # Sequential
-#SBATCH --output=kmeans-parallel-test.txt # Parallel
+gcc -fopenmp -Ofast kmeans.c kmeanslib_parallel.c -o kmeans_par -lm
+export OMP_NUM_THREADS=4 # Set number of threads
 
-##gcc -Ofast kmeans.c kmeanslib.c -o kmeans_sequential -lm # Sequential
+echo Nova execució provant 6
 
-gcc -fopenmp -Ofast kmeans.c kmeanslib_parallel.c -o kmeans_parallel -lm # Parallel
-export OMP_NUM_THREADS=6 # Set number of threads, only for parallel
-
-echo Nova execució provant 2
-
-##perf stat kmeans_sequential test 4 imagen.bmp # Sequential. Execute with perf profiler to measure time
-perf stat ./kmeans_parallel test 4 imagen.bmp # Parallel. Execute with perf profiler to measure time
+perf stat ./kmeans_par test 4 imagen.bmp # Execute with perf profiler to measure time
 

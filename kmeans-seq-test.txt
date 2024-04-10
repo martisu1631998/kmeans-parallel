@@ -1,0 +1,29 @@
+Nova execució provant 5
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+./kmeans_seq: Violación de segmento
+
+ Performance counter stats for './kmeans_seq test 4 imagen.bmp':
+
+            141,65 msec task-clock:u                     #    0,405 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+               532      page-faults:u                    #    3,756 K/sec                     
+       313.921.050      cycles:u                         #    2,216 GHz                         (49,92%)
+         2.049.039      stalled-cycles-frontend:u        #    0,65% frontend cycles idle        (50,36%)
+        66.355.744      stalled-cycles-backend:u         #   21,14% backend cycles idle         (50,82%)
+       559.883.290      instructions:u                   #    1,78  insn per cycle            
+                                                  #    0,12  stalled cycles per insn     (50,08%)
+       153.796.433      branches:u                       #    1,086 G/sec                       (49,64%)
+             8.335      branch-misses:u                  #    0,01% of all branches             (49,18%)
+
+       0,350171149 seconds time elapsed
+
+       0,122242000 seconds user
+       0,018706000 seconds sys
+
+

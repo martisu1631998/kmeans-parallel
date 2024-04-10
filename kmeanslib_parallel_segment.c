@@ -215,6 +215,7 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 	do 
   	{
 		// Reset centroids
+		printf("STEP 3.0: Reset centroids");
 		for(j = 0; j < k; j++) 
     	{
 			centroides[j].media_r = 0;
@@ -224,14 +225,42 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		}
    
 		// Find closest cluster for each pixel
-		for(j = 0; j < num_pixels; j++) 
+		/*for(j = 0; j < num_pixels; j++) 
     	{
 			closest = find_closest_centroid(&pixels[j], centroides, k);
 			centroides[closest].media_r += pixels[j].r;
 			centroides[closest].media_g += pixels[j].g;
 			centroides[closest].media_b += pixels[j].b;
 			centroides[closest].num_puntos++;
+		}*/
+ 
+		
+		// Find closest cluster for each pixel
+		int closest_by_pixel[num_pixels];		
+		printf("STEP 3.1: Finding closest centroids");
+		// #pragma omp parallel for
+		for (j=0; j<num_pixels; j++){
+			closest_by_pixel[j] = find_closest_centroid(&pixels[j], centroides, k);
+			centroides[closest_by_pixel[j]].num_puntos++; // Comptar aquí dins lo dels pixels a cada centroide
 		}
+		printf("STEP 3.2: Updating centroid means");
+		int means[k][3];		
+		// #pragma omp parallel for reduction(+:means[closest])
+		for (j=0; j<num_pixels; j++){
+			closest = closest_by_pixel[j];
+			means[closest][0] += pixels[j].r;
+			means[closest][1] += pixels[j].g;
+			means[closest][2] += pixels[j].b;
+		}
+		
+		for (int x=0; x<k; x++){			
+				centroides[x].media_r = means[x][0];
+				centroides[x].media_g = means[x][1];
+				centroides[x].media_b = means[x][2];
+			}
+		
+		// Després d'això només cal afegir tots els valors a centroides.
+
 
 		// Update centroids & check stop condition
 		condition = 0;
