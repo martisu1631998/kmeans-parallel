@@ -213,7 +213,7 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 	printf("STEP 3: Updating centroids\n\n");
 	i = 0;
 	do 
-  	{
+  	{	
 		// Reset centroids
 		for(j = 0; j < k; j++) 
     	{

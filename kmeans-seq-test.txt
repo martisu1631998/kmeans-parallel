@@ -1,29 +1,41 @@
-Nova execució provant 5
+Nova execució provant 6
 TEST = 1
 
 WIDTH : 3840
 HEIGHT: 2160
 LENGHT: 8294400
 
-./kmeans_seq: Violación de segmento
+STEP 1: K = 4
+STEP 2: Init centroids
+STEP 3: Updating centroids
 
- Performance counter stats for './kmeans_seq test 4 imagen.bmp':
+Number of K-Means iterations: 22
 
-            141,65 msec task-clock:u                     #    0,405 CPUs utilized             
+Centroide 0 : R[37]	G[30]	B[25]
+Centroide 1 : R[160]	G[144]	B[123]
+Centroide 2 : R[218]	G[213]	B[201]
+Centroide 3 : R[97]	G[81]	B[63]
+
+Time to Kmeans is 4 seconds and 380770 microseconds
+Checksum value = 12689895
+
+ Performance counter stats for './kmeans_par test 4 imagen.bmp':
+
+          4.533,85 msec task-clock:u                     #    0,999 CPUs utilized             
                  0      context-switches:u               #    0,000 /sec                      
                  0      cpu-migrations:u                 #    0,000 /sec                      
-               532      page-faults:u                    #    3,756 K/sec                     
-       313.921.050      cycles:u                         #    2,216 GHz                         (49,92%)
-         2.049.039      stalled-cycles-frontend:u        #    0,65% frontend cycles idle        (50,36%)
-        66.355.744      stalled-cycles-backend:u         #   21,14% backend cycles idle         (50,82%)
-       559.883.290      instructions:u                   #    1,78  insn per cycle            
-                                                  #    0,12  stalled cycles per insn     (50,08%)
-       153.796.433      branches:u                       #    1,086 G/sec                       (49,64%)
-             8.335      branch-misses:u                  #    0,01% of all branches             (49,18%)
+               551      page-faults:u                    #  121,530 /sec                      
+    11.653.424.929      cycles:u                         #    2,570 GHz                         (50,00%)
+       205.192.820      stalled-cycles-frontend:u        #    1,76% frontend cycles idle        (49,98%)
+     2.768.597.523      stalled-cycles-backend:u         #   23,76% backend cycles idle         (50,00%)
+    21.585.994.135      instructions:u                   #    1,85  insn per cycle            
+                                                  #    0,13  stalled cycles per insn     (50,00%)
+     1.986.247.420      branches:u                       #  438,093 M/sec                       (50,02%)
+        22.536.521      branch-misses:u                  #    1,13% of all branches             (50,00%)
 
-       0,350171149 seconds time elapsed
+       4,538408867 seconds time elapsed
 
-       0,122242000 seconds user
-       0,018706000 seconds sys
+       4,490923000 seconds user
+       0,014870000 seconds sys
 
 

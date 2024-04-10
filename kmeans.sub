@@ -4,11 +4,11 @@
 ##SBATCH -n 1
 #SBATCH --partition=nodo.q
 #SBATCH --exclusive
-#SBATCH --output=kmeans-seq-test.txt 
+#SBATCH --output=kmeans-par-test.txt 
 
 gcc -fopenmp -Ofast kmeans.c kmeanslib_parallel.c -o kmeans_par -lm
 export OMP_NUM_THREADS=4 # Set number of threads
 
-echo Nova execució provant 6
+echo Nova execució provant 7
 
 perf stat ./kmeans_par test 4 imagen.bmp # Execute with perf profiler to measure time
