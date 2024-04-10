@@ -1,0 +1,29 @@
+Nova execució provant 2
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+./kmeans_parallel: Violación de segmento
+
+ Performance counter stats for './kmeans_parallel test 4 imagen.bmp':
+
+            142,24 msec task-clock:u                     #    0,398 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+               532      page-faults:u                    #    3,740 K/sec                     
+       315.130.206      cycles:u                         #    2,216 GHz                         (49,69%)
+         3.876.857      stalled-cycles-frontend:u        #    1,23% frontend cycles idle        (49,47%)
+        63.831.520      stalled-cycles-backend:u         #   20,26% backend cycles idle         (50,13%)
+       559.347.671      instructions:u                   #    1,77  insn per cycle            
+                                                  #    0,11  stalled cycles per insn     (50,31%)
+       153.481.135      branches:u                       #    1,079 G/sec                       (50,53%)
+             8.555      branch-misses:u                  #    0,01% of all branches             (49,87%)
+
+       0,357816727 seconds time elapsed
+
+       0,121772000 seconds user
+       0,019791000 seconds sys
+
+
