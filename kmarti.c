@@ -243,6 +243,7 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		for (j=0; j<num_pixels; j++){
 			closest_by_pixel[j] = find_closest_centroid(&pixels[j], centroides, k);
 			centroides[closest_by_pixel[j]].num_puntos++;
+
 		}
 
 		int means[3][k];
