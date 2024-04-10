@@ -12,4 +12,3 @@ export OMP_NUM_THREADS=4 # Set number of threads
 echo Nova execució provant 6
 
 perf stat ./kmeans_par test 4 imagen.bmp # Execute with perf profiler to measure time
-
