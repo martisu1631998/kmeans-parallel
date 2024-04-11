@@ -206,7 +206,7 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		random_num = rand() % num_pixels;
 		centroides[i].r = pixels[random_num].r;
 		centroides[i].g = pixels[random_num].g;
-		centroides[i].b = pixels[random_num].b;
+		centroides[i].b = pixels[random_num].b;				
 	}
 
 	// K-means iterative procedures start
@@ -226,7 +226,6 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 			info[j][2] = 0;
 			info[j][3] = 0;
 		}
-
 		
 		// Find closest cluster for each pixel	
 		//#pragma omp parallel for private(closest) reduction(+: info[:k])			
