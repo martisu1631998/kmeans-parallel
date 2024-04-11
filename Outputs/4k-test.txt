@@ -1,0 +1,247 @@
+Execution with K = 4
+2 Threads
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 4
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 22
+
+Centroide 0 : R[37]	G[30]	B[25]
+Centroide 1 : R[160]	G[144]	B[123]
+Centroide 2 : R[218]	G[213]	B[201]
+Centroide 3 : R[97]	G[81]	B[63]
+
+Time to Kmeans is 2 seconds and 240060 microseconds
+Checksum value = 12689895
+
+ Performance counter stats for 'Executables/kmeans_par test 4 imagen.bmp':
+
+          4.567,06 msec task-clock:u                     #    1,915 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+             1.010      page-faults:u                    #  221,149 /sec                      
+    11.743.445.799      cycles:u                         #    2,571 GHz                         (49,98%)
+       152.038.475      stalled-cycles-frontend:u        #    1,29% frontend cycles idle        (49,99%)
+     2.478.042.372      stalled-cycles-backend:u         #   21,10% backend cycles idle         (50,02%)
+    22.159.644.444      instructions:u                   #    1,89  insn per cycle            
+                                                  #    0,11  stalled cycles per insn     (50,02%)
+     1.996.805.027      branches:u                       #  437,219 M/sec                       (50,01%)
+        20.378.571      branch-misses:u                  #    1,02% of all branches             (50,00%)
+
+       2,384412162 seconds time elapsed
+
+       4,518812000 seconds user
+       0,016868000 seconds sys
+
+
+4 Threads
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 4
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 22
+
+Centroide 0 : R[37]	G[30]	B[25]
+Centroide 1 : R[160]	G[144]	B[123]
+Centroide 2 : R[218]	G[213]	B[201]
+Centroide 3 : R[97]	G[81]	B[63]
+
+Time to Kmeans is 1 seconds and 133756 microseconds
+Checksum value = 12689895
+
+ Performance counter stats for 'Executables/kmeans_par test 4 imagen.bmp':
+
+          4.620,94 msec task-clock:u                     #    3,614 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+             1.018      page-faults:u                    #  220,302 /sec                      
+    11.840.518.269      cycles:u                         #    2,562 GHz                         (50,04%)
+       172.871.862      stalled-cycles-frontend:u        #    1,46% frontend cycles idle        (50,06%)
+     2.481.979.739      stalled-cycles-backend:u         #   20,96% backend cycles idle         (50,03%)
+    22.245.918.246      instructions:u                   #    1,88  insn per cycle            
+                                                  #    0,11  stalled cycles per insn     (49,97%)
+     2.026.131.168      branches:u                       #  438,467 M/sec                       (49,96%)
+        20.747.791      branch-misses:u                  #    1,02% of all branches             (50,00%)
+
+       1,278618969 seconds time elapsed
+
+       4,558110000 seconds user
+       0,028671000 seconds sys
+
+
+6 Threads
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 4
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 22
+
+Centroide 0 : R[37]	G[30]	B[25]
+Centroide 1 : R[160]	G[144]	B[123]
+Centroide 2 : R[218]	G[213]	B[201]
+Centroide 3 : R[97]	G[81]	B[63]
+
+Time to Kmeans is 0 seconds and 760880 microseconds
+Checksum value = 12689895
+
+ Performance counter stats for 'Executables/kmeans_par test 4 imagen.bmp':
+
+          4.638,81 msec task-clock:u                     #    5,134 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+               543      page-faults:u                    #  117,056 /sec                      
+    11.919.175.088      cycles:u                         #    2,569 GHz                         (50,04%)
+       176.746.062      stalled-cycles-frontend:u        #    1,48% frontend cycles idle        (50,03%)
+     2.494.252.379      stalled-cycles-backend:u         #   20,93% backend cycles idle         (50,04%)
+    22.324.144.272      instructions:u                   #    1,87  insn per cycle            
+                                                  #    0,11  stalled cycles per insn     (49,99%)
+     2.045.354.405      branches:u                       #  440,922 M/sec                       (49,99%)
+        20.705.447      branch-misses:u                  #    1,01% of all branches             (50,01%)
+
+       0,903526280 seconds time elapsed
+
+       4,590342000 seconds user
+       0,014866000 seconds sys
+
+
+8 Threads
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 4
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 22
+
+Centroide 0 : R[37]	G[30]	B[25]
+Centroide 1 : R[160]	G[144]	B[123]
+Centroide 2 : R[218]	G[213]	B[201]
+Centroide 3 : R[97]	G[81]	B[63]
+
+Time to Kmeans is 0 seconds and 573911 microseconds
+Checksum value = 12689895
+
+ Performance counter stats for 'Executables/kmeans_par test 4 imagen.bmp':
+
+          4.671,25 msec task-clock:u                     #    6,517 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+               545      page-faults:u                    #  116,671 /sec                      
+    11.973.400.192      cycles:u                         #    2,563 GHz                         (50,02%)
+       188.293.626      stalled-cycles-frontend:u        #    1,57% frontend cycles idle        (50,06%)
+     2.493.280.742      stalled-cycles-backend:u         #   20,82% backend cycles idle         (50,15%)
+    22.423.889.467      instructions:u                   #    1,87  insn per cycle            
+                                                  #    0,11  stalled cycles per insn     (50,05%)
+     2.069.677.095      branches:u                       #  443,067 M/sec                       (50,01%)
+        20.812.165      branch-misses:u                  #    1,01% of all branches             (49,95%)
+
+       0,716806757 seconds time elapsed
+
+       4,610702000 seconds user
+       0,022770000 seconds sys
+
+
+10 Threads
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 4
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 22
+
+Centroide 0 : R[37]	G[30]	B[25]
+Centroide 1 : R[160]	G[144]	B[123]
+Centroide 2 : R[218]	G[213]	B[201]
+Centroide 3 : R[97]	G[81]	B[63]
+
+Time to Kmeans is 0 seconds and 460788 microseconds
+Checksum value = 12689895
+
+ Performance counter stats for 'Executables/kmeans_par test 4 imagen.bmp':
+
+          4.696,46 msec task-clock:u                     #    7,769 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+               552      page-faults:u                    #  117,535 /sec                      
+    12.051.949.271      cycles:u                         #    2,566 GHz                         (50,15%)
+       197.339.724      stalled-cycles-frontend:u        #    1,64% frontend cycles idle        (50,00%)
+     2.504.018.030      stalled-cycles-backend:u         #   20,78% backend cycles idle         (49,91%)
+    22.467.218.526      instructions:u                   #    1,86  insn per cycle            
+                                                  #    0,11  stalled cycles per insn     (49,94%)
+     2.081.253.329      branches:u                       #  443,153 M/sec                       (50,09%)
+        20.714.863      branch-misses:u                  #    1,00% of all branches             (50,21%)
+
+       0,604511124 seconds time elapsed
+
+       4,640277000 seconds user
+       0,023730000 seconds sys
+
+
+12 Threads
+TEST = 0
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 4
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 22
+
+Centroide 0 : R[37]	G[30]	B[25]
+Centroide 1 : R[160]	G[144]	B[123]
+Centroide 2 : R[218]	G[213]	B[201]
+Centroide 3 : R[97]	G[81]	B[63]
+
+Time to Kmeans is 0 seconds and 431281 microseconds
+Checksum value = 12689895
+
+ Performance counter stats for 'Executables/kmeans_par exec 4 imagen.bmp Outputs/4k.bmp':
+
+          5.326,10 msec task-clock:u                     #    3,937 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+               558      page-faults:u                    #  104,767 /sec                      
+    13.602.880.383      cycles:u                         #    2,554 GHz                         (49,83%)
+       226.118.354      stalled-cycles-frontend:u        #    1,66% frontend cycles idle        (49,73%)
+     2.952.036.201      stalled-cycles-backend:u         #   21,70% backend cycles idle         (50,15%)
+    24.805.128.076      instructions:u                   #    1,82  insn per cycle            
+                                                  #    0,12  stalled cycles per insn     (50,27%)
+     2.515.155.707      branches:u                       #  472,232 M/sec                       (50,31%)
+        22.046.797      branch-misses:u                  #    0,88% of all branches             (49,93%)
+
+       1,352980476 seconds time elapsed
+
+       5,217091000 seconds user
+       0,070659000 seconds sys
+
+
