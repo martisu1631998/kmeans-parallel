@@ -1,0 +1,397 @@
+Execution with K = 32
+2 Threads
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 32
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 49
+
+Centroide 0 : R[23]	G[20]	B[17]
+Centroide 1 : R[77]	G[30]	B[14]
+Centroide 2 : R[196]	G[194]	B[185]
+Centroide 3 : R[29]	G[37]	B[36]
+Centroide 4 : R[130]	G[54]	B[23]
+Centroide 5 : R[13]	G[10]	B[8]
+Centroide 6 : R[156]	G[199]	B[210]
+Centroide 7 : R[156]	G[146]	B[134]
+Centroide 8 : R[133]	G[126]	B[114]
+Centroide 9 : R[194]	G[101]	B[34]
+Centroide 10 : R[174]	G[169]	B[161]
+Centroide 11 : R[102]	G[107]	B[102]
+Centroide 12 : R[39]	G[28]	B[19]
+Centroide 13 : R[220]	G[216]	B[206]
+Centroide 14 : R[68]	G[69]	B[63]
+Centroide 15 : R[224]	G[175]	B[74]
+Centroide 16 : R[125]	G[86]	B[54]
+Centroide 17 : R[205]	G[164]	B[130]
+Centroide 18 : R[120]	G[155]	B[161]
+Centroide 19 : R[152]	G[109]	B[67]
+Centroide 20 : R[8]	G[52]	B[85]
+Centroide 21 : R[178]	G[132]	B[95]
+Centroide 22 : R[98]	G[69]	B[46]
+Centroide 23 : R[24]	G[119]	B[121]
+Centroide 24 : R[77]	G[53]	B[36]
+Centroide 25 : R[244]	G[241]	B[234]
+Centroide 26 : R[121]	G[105]	B[84]
+Centroide 27 : R[54]	G[40]	B[28]
+Centroide 28 : R[89]	G[87]	B[78]
+Centroide 29 : R[52]	G[52]	B[47]
+Centroide 30 : R[231]	G[202]	B[160]
+Centroide 31 : R[35]	G[9]	B[6]
+
+Time to Kmeans is 7 seconds and 484888 microseconds
+Checksum value = 73490886
+
+ Performance counter stats for 'Executables/kmeans_par test 32 imagen.bmp':
+
+         15.000,89 msec task-clock:u              #    1,995 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+               533      page-faults:u             #   35,531 /sec                   
+    62.721.649.197      cpu_core/cycles:u/        #    4,181 G/sec                  
+   289.281.696.884      cpu_core/instructions:u/  #   19,284 G/sec                  
+    27.002.533.326      cpu_core/branches:u/      #    1,800 G/sec                  
+       308.700.879      cpu_core/branch-misses:u/ #   20,579 M/sec                  
+
+       7,518834866 seconds time elapsed
+
+      14,982445000 seconds user
+       0,005967000 seconds sys
+
+
+4 Threads
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 32
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 49
+
+Centroide 0 : R[23]	G[20]	B[17]
+Centroide 1 : R[77]	G[30]	B[14]
+Centroide 2 : R[196]	G[194]	B[185]
+Centroide 3 : R[29]	G[37]	B[36]
+Centroide 4 : R[130]	G[54]	B[23]
+Centroide 5 : R[13]	G[10]	B[8]
+Centroide 6 : R[156]	G[199]	B[210]
+Centroide 7 : R[156]	G[146]	B[134]
+Centroide 8 : R[133]	G[126]	B[114]
+Centroide 9 : R[194]	G[101]	B[34]
+Centroide 10 : R[174]	G[169]	B[161]
+Centroide 11 : R[102]	G[107]	B[102]
+Centroide 12 : R[39]	G[28]	B[19]
+Centroide 13 : R[220]	G[216]	B[206]
+Centroide 14 : R[68]	G[69]	B[63]
+Centroide 15 : R[224]	G[175]	B[74]
+Centroide 16 : R[125]	G[86]	B[54]
+Centroide 17 : R[205]	G[164]	B[130]
+Centroide 18 : R[120]	G[155]	B[161]
+Centroide 19 : R[152]	G[109]	B[67]
+Centroide 20 : R[8]	G[52]	B[85]
+Centroide 21 : R[178]	G[132]	B[95]
+Centroide 22 : R[98]	G[69]	B[46]
+Centroide 23 : R[24]	G[119]	B[121]
+Centroide 24 : R[77]	G[53]	B[36]
+Centroide 25 : R[244]	G[241]	B[234]
+Centroide 26 : R[121]	G[105]	B[84]
+Centroide 27 : R[54]	G[40]	B[28]
+Centroide 28 : R[89]	G[87]	B[78]
+Centroide 29 : R[52]	G[52]	B[47]
+Centroide 30 : R[231]	G[202]	B[160]
+Centroide 31 : R[35]	G[9]	B[6]
+
+Time to Kmeans is 3 seconds and 940195 microseconds
+Checksum value = 73490886
+
+ Performance counter stats for 'Executables/kmeans_par test 32 imagen.bmp':
+
+         15.786,93 msec task-clock:u              #    3,974 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+               539      page-faults:u             #   34,142 /sec                   
+    65.866.441.797      cpu_core/cycles:u/        #    4,172 G/sec                  
+   289.397.046.539      cpu_core/instructions:u/  #   18,331 G/sec                  
+    27.035.480.352      cpu_core/branches:u/      #    1,713 G/sec                  
+       308.240.108      cpu_core/branch-misses:u/ #   19,525 M/sec                  
+
+       3,972401926 seconds time elapsed
+
+      15,767287000 seconds user
+       0,008966000 seconds sys
+
+
+6 Threads
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 32
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 49
+
+Centroide 0 : R[23]	G[20]	B[17]
+Centroide 1 : R[77]	G[30]	B[14]
+Centroide 2 : R[196]	G[194]	B[185]
+Centroide 3 : R[29]	G[37]	B[36]
+Centroide 4 : R[130]	G[54]	B[23]
+Centroide 5 : R[13]	G[10]	B[8]
+Centroide 6 : R[156]	G[199]	B[210]
+Centroide 7 : R[156]	G[146]	B[134]
+Centroide 8 : R[133]	G[126]	B[114]
+Centroide 9 : R[194]	G[101]	B[34]
+Centroide 10 : R[174]	G[169]	B[161]
+Centroide 11 : R[102]	G[107]	B[102]
+Centroide 12 : R[39]	G[28]	B[19]
+Centroide 13 : R[220]	G[216]	B[206]
+Centroide 14 : R[68]	G[69]	B[63]
+Centroide 15 : R[224]	G[175]	B[74]
+Centroide 16 : R[125]	G[86]	B[54]
+Centroide 17 : R[205]	G[164]	B[130]
+Centroide 18 : R[120]	G[155]	B[161]
+Centroide 19 : R[152]	G[109]	B[67]
+Centroide 20 : R[8]	G[52]	B[85]
+Centroide 21 : R[178]	G[132]	B[95]
+Centroide 22 : R[98]	G[69]	B[46]
+Centroide 23 : R[24]	G[119]	B[121]
+Centroide 24 : R[77]	G[53]	B[36]
+Centroide 25 : R[244]	G[241]	B[234]
+Centroide 26 : R[121]	G[105]	B[84]
+Centroide 27 : R[54]	G[40]	B[28]
+Centroide 28 : R[89]	G[87]	B[78]
+Centroide 29 : R[52]	G[52]	B[47]
+Centroide 30 : R[231]	G[202]	B[160]
+Centroide 31 : R[35]	G[9]	B[6]
+
+Time to Kmeans is 2 seconds and 816947 microseconds
+Checksum value = 73490886
+
+ Performance counter stats for 'Executables/kmeans_par test 32 imagen.bmp':
+
+         16.897,77 msec task-clock:u              #    5,931 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+               541      page-faults:u             #   32,016 /sec                   
+    67.282.541.469      cpu_core/cycles:u/        #    3,982 G/sec                  
+   289.454.734.149      cpu_core/instructions:u/  #   17,130 G/sec                  
+    27.051.952.627      cpu_core/branches:u/      #    1,601 G/sec                  
+       309.821.534      cpu_core/branch-misses:u/ #   18,335 M/sec                  
+
+       2,848993081 seconds time elapsed
+
+      16,883467000 seconds user
+       0,001998000 seconds sys
+
+
+8 Threads
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 32
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 49
+
+Centroide 0 : R[23]	G[20]	B[17]
+Centroide 1 : R[77]	G[30]	B[14]
+Centroide 2 : R[196]	G[194]	B[185]
+Centroide 3 : R[29]	G[37]	B[36]
+Centroide 4 : R[130]	G[54]	B[23]
+Centroide 5 : R[13]	G[10]	B[8]
+Centroide 6 : R[156]	G[199]	B[210]
+Centroide 7 : R[156]	G[146]	B[134]
+Centroide 8 : R[133]	G[126]	B[114]
+Centroide 9 : R[194]	G[101]	B[34]
+Centroide 10 : R[174]	G[169]	B[161]
+Centroide 11 : R[102]	G[107]	B[102]
+Centroide 12 : R[39]	G[28]	B[19]
+Centroide 13 : R[220]	G[216]	B[206]
+Centroide 14 : R[68]	G[69]	B[63]
+Centroide 15 : R[224]	G[175]	B[74]
+Centroide 16 : R[125]	G[86]	B[54]
+Centroide 17 : R[205]	G[164]	B[130]
+Centroide 18 : R[120]	G[155]	B[161]
+Centroide 19 : R[152]	G[109]	B[67]
+Centroide 20 : R[8]	G[52]	B[85]
+Centroide 21 : R[178]	G[132]	B[95]
+Centroide 22 : R[98]	G[69]	B[46]
+Centroide 23 : R[24]	G[119]	B[121]
+Centroide 24 : R[77]	G[53]	B[36]
+Centroide 25 : R[244]	G[241]	B[234]
+Centroide 26 : R[121]	G[105]	B[84]
+Centroide 27 : R[54]	G[40]	B[28]
+Centroide 28 : R[89]	G[87]	B[78]
+Centroide 29 : R[52]	G[52]	B[47]
+Centroide 30 : R[231]	G[202]	B[160]
+Centroide 31 : R[35]	G[9]	B[6]
+
+Time to Kmeans is 3 seconds and 709120 microseconds
+Checksum value = 73490886
+
+ Performance counter stats for 'Executables/kmeans_par test 32 imagen.bmp':
+
+         25.247,64 msec task-clock:u              #    6,750 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+             1.058      page-faults:u             #   41,905 /sec                   
+   101.829.628.817      cpu_core/cycles:u/        #    4,033 G/sec                  
+   289.740.030.174      cpu_core/instructions:u/  #   11,476 G/sec                  
+    27.133.461.162      cpu_core/branches:u/      #    1,075 G/sec                  
+       403.399.447      cpu_core/branch-misses:u/ #   15,978 M/sec                  
+
+       3,740427336 seconds time elapsed
+
+      25,213956000 seconds user
+       0,018926000 seconds sys
+
+
+10 Threads
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 32
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 49
+
+Centroide 0 : R[23]	G[20]	B[17]
+Centroide 1 : R[77]	G[30]	B[14]
+Centroide 2 : R[196]	G[194]	B[185]
+Centroide 3 : R[29]	G[37]	B[36]
+Centroide 4 : R[130]	G[54]	B[23]
+Centroide 5 : R[13]	G[10]	B[8]
+Centroide 6 : R[156]	G[199]	B[210]
+Centroide 7 : R[156]	G[146]	B[134]
+Centroide 8 : R[133]	G[126]	B[114]
+Centroide 9 : R[194]	G[101]	B[34]
+Centroide 10 : R[174]	G[169]	B[161]
+Centroide 11 : R[102]	G[107]	B[102]
+Centroide 12 : R[39]	G[28]	B[19]
+Centroide 13 : R[220]	G[216]	B[206]
+Centroide 14 : R[68]	G[69]	B[63]
+Centroide 15 : R[224]	G[175]	B[74]
+Centroide 16 : R[125]	G[86]	B[54]
+Centroide 17 : R[205]	G[164]	B[130]
+Centroide 18 : R[120]	G[155]	B[161]
+Centroide 19 : R[152]	G[109]	B[67]
+Centroide 20 : R[8]	G[52]	B[85]
+Centroide 21 : R[178]	G[132]	B[95]
+Centroide 22 : R[98]	G[69]	B[46]
+Centroide 23 : R[24]	G[119]	B[121]
+Centroide 24 : R[77]	G[53]	B[36]
+Centroide 25 : R[244]	G[241]	B[234]
+Centroide 26 : R[121]	G[105]	B[84]
+Centroide 27 : R[54]	G[40]	B[28]
+Centroide 28 : R[89]	G[87]	B[78]
+Centroide 29 : R[52]	G[52]	B[47]
+Centroide 30 : R[231]	G[202]	B[160]
+Centroide 31 : R[35]	G[9]	B[6]
+
+Time to Kmeans is 3 seconds and 136006 microseconds
+Checksum value = 73490886
+
+ Performance counter stats for 'Executables/kmeans_par test 32 imagen.bmp':
+
+         29.555,60 msec task-clock:u              #    9,328 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+               551      page-faults:u             #   18,643 /sec                   
+   118.533.858.832      cpu_core/cycles:u/        #    4,011 G/sec                  
+   289.658.258.630      cpu_core/instructions:u/  #    9,800 G/sec                  
+    27.110.090.318      cpu_core/branches:u/      #  917,257 M/sec                  
+       479.687.254      cpu_core/branch-misses:u/ #   16,230 M/sec                  
+
+       3,168411519 seconds time elapsed
+
+      29,526972000 seconds user
+       0,005969000 seconds sys
+
+
+12 Threads
+TEST = 0
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 32
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 49
+
+Centroide 0 : R[23]	G[20]	B[17]
+Centroide 1 : R[77]	G[30]	B[14]
+Centroide 2 : R[196]	G[194]	B[185]
+Centroide 3 : R[29]	G[37]	B[36]
+Centroide 4 : R[130]	G[54]	B[23]
+Centroide 5 : R[13]	G[10]	B[8]
+Centroide 6 : R[156]	G[199]	B[210]
+Centroide 7 : R[156]	G[146]	B[134]
+Centroide 8 : R[133]	G[126]	B[114]
+Centroide 9 : R[194]	G[101]	B[34]
+Centroide 10 : R[174]	G[169]	B[161]
+Centroide 11 : R[102]	G[107]	B[102]
+Centroide 12 : R[39]	G[28]	B[19]
+Centroide 13 : R[220]	G[216]	B[206]
+Centroide 14 : R[68]	G[69]	B[63]
+Centroide 15 : R[224]	G[175]	B[74]
+Centroide 16 : R[125]	G[86]	B[54]
+Centroide 17 : R[205]	G[164]	B[130]
+Centroide 18 : R[120]	G[155]	B[161]
+Centroide 19 : R[152]	G[109]	B[67]
+Centroide 20 : R[8]	G[52]	B[85]
+Centroide 21 : R[178]	G[132]	B[95]
+Centroide 22 : R[98]	G[69]	B[46]
+Centroide 23 : R[24]	G[119]	B[121]
+Centroide 24 : R[77]	G[53]	B[36]
+Centroide 25 : R[244]	G[241]	B[234]
+Centroide 26 : R[121]	G[105]	B[84]
+Centroide 27 : R[54]	G[40]	B[28]
+Centroide 28 : R[89]	G[87]	B[78]
+Centroide 29 : R[52]	G[52]	B[47]
+Centroide 30 : R[231]	G[202]	B[160]
+Centroide 31 : R[35]	G[9]	B[6]
+
+Time to Kmeans is 2 seconds and 614508 microseconds
+Checksum value = 73490886
+
+ Performance counter stats for 'Executables/kmeans_par exec 32 imagen.bmp Outputs/32k-aolin.bmp':
+
+         31.960,66 msec task-clock:u              #    9,724 CPUs utilized          
+                 0      context-switches:u        #    0,000 /sec                   
+                 0      cpu-migrations:u          #    0,000 /sec                   
+               557      page-faults:u             #   17,428 /sec                   
+   127.361.030.320      cpu_core/cycles:u/        #    3,985 G/sec                  
+   296.635.356.264      cpu_core/instructions:u/  #    9,281 G/sec                  
+    27.892.739.303      cpu_core/branches:u/      #  872,721 M/sec                  
+       538.394.886      cpu_core/branch-misses:u/ #   16,846 M/sec                  
+
+       3,286756639 seconds time elapsed
+
+      31,916310000 seconds user
+       0,018968000 seconds sys
+
+
