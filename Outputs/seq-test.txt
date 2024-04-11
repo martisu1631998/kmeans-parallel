@@ -1,0 +1,41 @@
+Execució de prova
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 4
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 22
+
+Centroide 0 : R[37]	G[30]	B[25]
+Centroide 1 : R[160]	G[144]	B[123]
+Centroide 2 : R[218]	G[213]	B[201]
+Centroide 3 : R[97]	G[81]	B[63]
+
+Time to Kmeans is 4 seconds and 379452 microseconds
+Checksum value = 12689895
+
+ Performance counter stats for 'Executables/kmeans_seq test 4 imagen.bmp':
+
+          4.534,21 msec task-clock:u                     #    0,973 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+               537      page-faults:u                    #  118,433 /sec                      
+    11.635.739.859      cycles:u                         #    2,566 GHz                         (49,99%)
+       182.960.773      stalled-cycles-frontend:u        #    1,57% frontend cycles idle        (49,93%)
+     2.773.087.166      stalled-cycles-backend:u         #   23,83% backend cycles idle         (49,91%)
+    21.558.843.714      instructions:u                   #    1,85  insn per cycle            
+                                                  #    0,13  stalled cycles per insn     (50,01%)
+     1.982.370.211      branches:u                       #  437,203 M/sec                       (50,07%)
+        20.773.248      branch-misses:u                  #    1,05% of all branches             (50,09%)
+
+       4,661860601 seconds time elapsed
+
+       4,471145000 seconds user
+       0,035618000 seconds sys
+
+

@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --job-name=openmp
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH --partition=nodo.q
+#SBATCH --exclusive
+#SBATCH --output=Outputs/seq-test.txt 
+
+gcc -Ofast kmeans.c kmeanslib.c -o Executables/kmeans_seq -lm # Compile code
+
+echo Execució de prova
+
+perf stat Executables/kmeans_seq test 4 imagen.bmp # Execute with perf profiler to measure time, k = 4
