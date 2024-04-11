@@ -9,6 +9,6 @@
 gcc -fopenmp -Ofast kmeans.c kmeanslib_parallel.c -o Executables/kmeans_par -lm # Compile code
 export OMP_NUM_THREADS=4 # Set number of threads
 
-echo Execució ab
+echo Execució wtff
 
-perf stat Executables/kmeans_par test 4 imagen.bmp # Execute with perf profiler to measure time, k = 4
+perf stat Executables/kmeans_par test 16 imagen.bmp # Execute with perf profiler to measure time, k = 4

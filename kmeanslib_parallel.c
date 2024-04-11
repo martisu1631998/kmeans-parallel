@@ -194,7 +194,7 @@ uint8_t find_closest_centroid(rgb* p, cluster* centroids, uint8_t num_clusters){
  */
 void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){	
 	uint8_t condition, changed, closest; 
-	uint32_t i, j, random_num, info[k][3];	
+	uint32_t i, j, random_num, vr[k], vg[k], vb[k], vp[k]; // Initialize four helper vectors to parallelize the code		
 	
 	printf("STEP 1: K = %d\n", k);
 	k = MIN(k, num_pixels);
@@ -213,52 +213,40 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 	printf("STEP 3: Updating centroids\n\n");
 	i = 0;
 	do 
-  	{	
-		// Reset centroids
+  	{				
+		// Reset centroids		
 		for(j = 0; j < k; j++) 
     	{
 			centroides[j].media_r = 0;
 			centroides[j].media_g = 0;
 			centroides[j].media_b = 0;
-			centroides[j].num_puntos = 0;
-			info[j][0] = 0;
-			info[j][1] = 0;
-			info[j][2] = 0;
-			info[j][3] = 0;
-		}
+			centroides[j].num_puntos = 0;	
+			// Reset also the values of the helper vectors
+			vr[j] = 0;
+			vg[j] = 0;		
+			vb[j] = 0;		
+			vp[j] = 0;				
+		}	
 		
-		// Find closest cluster for each pixel	
-		//#pragma omp parallel for private(closest) reduction(+: info[:k])			
+		// Find closest cluster for each pixel		
+		#pragma omp parallel for private(closest) reduction(+: vr[:k], vg[:k], vb[:k], vp[:k]) // Parallelizing the for with a reduction				
 		for(j = 0; j < num_pixels; j++) 
     	{
 			closest = find_closest_centroid(&pixels[j], centroides, k);
-			info[closest][0] += pixels[j].r;			
-			info[closest][1] += pixels[j].g;
-			info[closest][2] += pixels[j].b;
-			info[closest][3]++;			
+			vr[closest] += pixels[j].r;			
+			vg[closest] += pixels[j].g;
+			vb[closest] += pixels[j].b;
+			vp[closest]++;						
 		}		
 
+		// Assign the obtained values to the centroides variable
 		for(j = 0; j < k; j++)
 		{
-			centroides[j].media_r = info[j][0];
-			centroides[j].media_g = info[j][1];
-			centroides[j].media_b = info[j][2];
-			centroides[j].num_puntos = info[j][3];
-		}
-
-		// for(j = 0; j < k; j++)
-		// {
-		// 	printf("%d\n",info[j][0]);
-		// 	printf("%d\n",centroides[j].media_r);
-		// 	printf("%d\n",info[j][1]);
-		// 	printf("%d\n",centroides[j].media_g);
-		// 	printf("%d\n",info[j][2]);
-		// 	printf("%d\n",centroides[j].media_b);
-		// 	printf("%d\n",info[j][3]);
-		// 	printf("%d\n",centroides[j].num_puntos);
-		// }
-
-		// break;
+			centroides[j].media_r = vr[j];
+			centroides[j].media_g = vg[j];
+			centroides[j].media_b = vb[j];
+			centroides[j].num_puntos = vp[j];
+		}		
 
 		// Update centroids & check stop condition
 		condition = 0;
