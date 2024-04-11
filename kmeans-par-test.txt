@@ -1,8 +1,41 @@
-Nova execució prova 3
+Nova execució prova 5
 TEST = 1
 
 WIDTH : 3840
 HEIGHT: 2160
 LENGHT: 8294400
 
-slurmstepd: error: *** JOB 219480 ON clus05 CANCELLED AT 2024-04-11T15:51:49 ***
+STEP 1: K = 4
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 15
+
+Centroide 0 : R[0]	G[0]	B[0]
+Centroide 1 : R[79]	G[75]	B[59]
+Centroide 2 : R[0]	G[0]	B[0]
+Centroide 3 : R[200]	G[191]	B[176]
+
+Time to Kmeans is 3 seconds and 513777 microseconds
+Checksum value = 7072775
+
+ Performance counter stats for './kmeans_par test 4 imagen.bmp':
+
+         11.969,85 msec task-clock:u                     #    3,272 CPUs utilized             
+                 0      context-switches:u               #    0,000 /sec                      
+                 0      cpu-migrations:u                 #    0,000 /sec                      
+             1.490      page-faults:u                    #  124,479 /sec                      
+    30.787.090.430      cycles:u                         #    2,572 GHz                         (50,01%)
+       236.735.762      stalled-cycles-frontend:u        #    0,77% frontend cycles idle        (49,97%)
+    23.946.990.815      stalled-cycles-backend:u         #   77,78% backend cycles idle         (50,02%)
+    15.238.313.609      instructions:u                   #    0,49  insn per cycle            
+                                                  #    1,57  stalled cycles per insn     (50,01%)
+     1.432.708.747      branches:u                       #  119,693 M/sec                       (50,03%)
+         6.202.547      branch-misses:u                  #    0,43% of all branches             (50,00%)
+
+       3,658775238 seconds time elapsed
+
+      11,851438000 seconds user
+       0,031687000 seconds sys
+
+
