@@ -193,8 +193,9 @@ uint8_t find_closest_centroid(rgb* p, cluster* centroids, uint8_t num_clusters){
  * input @param: pixels 	--> pinter to array of rgb (pixels)
  */
 void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){	
-	uint8_t condition, changed, closest;
-	uint32_t i, j, random_num;
+	uint8_t condition, changed, closest, info[k][3];
+	uint32_t i, j, random_num; 
+	
 	
 	printf("STEP 1: K = %d\n", k);
 	k = MIN(k, num_pixels);
@@ -221,16 +222,28 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 			centroides[j].media_g = 0;
 			centroides[j].media_b = 0;
 			centroides[j].num_puntos = 0;
+			info[j][0] = 0;
+			info[j][1] = 0;
+			info[j][2] = 0;
+			info[j][3] = 0;
 		}
    
-		// Find closest cluster for each pixel
+		// Find closest cluster for each pixel				
 		for(j = 0; j < num_pixels; j++) 
     	{
 			closest = find_closest_centroid(&pixels[j], centroides, k);
-			centroides[closest].media_r += pixels[j].r;
-			centroides[closest].media_g += pixels[j].g;
-			centroides[closest].media_b += pixels[j].b;
-			centroides[closest].num_puntos++;
+			info[closest][0] += pixels[j].r;			
+			info[closest][1] += pixels[j].g;
+			info[closest][2] += pixels[j].b;
+			info[closest][3]++;			
+		}		
+
+		for(j = 0; j < k; j++)
+		{
+			centroides[j].media_r = info[j][0];
+			centroides[j].media_g = info[j][1];
+			centroides[j].media_b = info[j][2];
+			centroides[j].num_puntos = info[j][3];
 		}
 
 		// Update centroids & check stop condition

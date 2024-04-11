@@ -1,4 +1,4 @@
-Nova execució provant 7
+Nova execució prova 1
 TEST = 1
 
 WIDTH : 3840
@@ -9,33 +9,33 @@ STEP 1: K = 4
 STEP 2: Init centroids
 STEP 3: Updating centroids
 
-Number of K-Means iterations: 22
+Number of K-Means iterations: 64
 
-Centroide 0 : R[37]	G[30]	B[25]
-Centroide 1 : R[160]	G[144]	B[123]
-Centroide 2 : R[218]	G[213]	B[201]
-Centroide 3 : R[97]	G[81]	B[63]
+Centroide 0 : R[0]	G[0]	B[0]
+Centroide 1 : R[1]	G[0]	B[0]
+Centroide 2 : R[1]	G[0]	B[0]
+Centroide 3 : R[0]	G[0]	B[0]
 
-Time to Kmeans is 4 seconds and 380171 microseconds
-Checksum value = 12689895
+Time to Kmeans is 23 seconds and 583507 microseconds
+Checksum value = 0
 
  Performance counter stats for './kmeans_par test 4 imagen.bmp':
 
-          4.523,08 msec task-clock:u                     #    0,999 CPUs utilized             
+         79.290,48 msec task-clock:u                     #    3,341 CPUs utilized             
                  0      context-switches:u               #    0,000 /sec                      
                  0      cpu-migrations:u                 #    0,000 /sec                      
-               551      page-faults:u                    #  121,820 /sec                      
-    11.632.216.174      cycles:u                         #    2,572 GHz                         (49,98%)
-       184.904.931      stalled-cycles-frontend:u        #    1,59% frontend cycles idle        (49,99%)
-     2.773.881.771      stalled-cycles-backend:u         #   23,85% backend cycles idle         (50,00%)
-    21.569.253.066      instructions:u                   #    1,85  insn per cycle            
-                                                  #    0,13  stalled cycles per insn     (50,02%)
-     1.978.899.640      branches:u                       #  437,512 M/sec                       (50,01%)
-        21.052.846      branch-misses:u                  #    1,06% of all branches             (50,00%)
+             3.839      page-faults:u                    #   48,417 /sec                      
+   204.540.405.028      cycles:u                         #    2,580 GHz                         (50,00%)
+     1.149.397.399      stalled-cycles-frontend:u        #    0,56% frontend cycles idle        (49,99%)
+   175.137.406.749      stalled-cycles-backend:u         #   85,62% backend cycles idle         (50,01%)
+    62.428.989.640      instructions:u                   #    0,31  insn per cycle            
+                                                  #    2,81  stalled cycles per insn     (50,00%)
+     5.584.989.884      branches:u                       #   70,437 M/sec                       (50,01%)
+         6.060.471      branch-misses:u                  #    0,11% of all branches             (49,99%)
 
-       4,527217193 seconds time elapsed
+      23,729317463 seconds time elapsed
 
-       4,476084000 seconds user
-       0,019816000 seconds sys
+      78,698003000 seconds user
+       0,051523000 seconds sys
 
 
