@@ -15,27 +15,24 @@ Number of K-Means iterations: 9
 Centroide 0 : R[68]	G[56]	B[45]
 Centroide 1 : R[196]	G[186]	B[171]
 
-Time to Kmeans is 0 seconds and 744622 microseconds
+Time to Kmeans is 0 seconds and 275375 microseconds
 Checksum value = 6405336
 
  Performance counter stats for 'Executables/kmeans_seq test 2 imagen.bmp':
 
-            851,50 msec task-clock:u              #    0,874 CPUs utilized          
+            312,71 msec task-clock:u              #    0,637 CPUs utilized          
                  0      context-switches:u        #    0,000 /sec                   
                  0      cpu-migrations:u          #    0,000 /sec                   
-               514      page-faults:u             #  603,640 /sec                   
-     2.639.128.068      cycles:u                  #    3,099 GHz                    
-       661.562.176      stalled-cycles-frontend:u #   25,07% frontend cycles idle   
-        86.000.941      stalled-cycles-backend:u  #    3,26% backend cycles idle    
-     5.926.750.658      instructions:u            #    2,25  insn per cycle         
-                                                  #    0,11  stalled cycles per insn
-       605.663.493      branches:u                #  711,290 M/sec                  
-         2.675.164      branch-misses:u           #    0,44% of all branches        
+               515      page-faults:u             #    1,647 K/sec                  
+     1.197.883.540      cpu_core/cycles:u/        #    3,831 G/sec                  
+     5.926.746.666      cpu_core/instructions:u/  #   18,953 G/sec                  
+       605.661.901      cpu_core/branches:u/      #    1,937 G/sec                  
+         2.280.626      cpu_core/branch-misses:u/ #    7,293 M/sec                  
 
-       0,974718696 seconds time elapsed
+       0,490548104 seconds time elapsed
 
-       0,835276000 seconds user
-       0,017021000 seconds sys
+       0,303358000 seconds user
+       0,009980000 seconds sys
 
 
 K = 4
@@ -56,27 +53,24 @@ Centroide 1 : R[160]	G[144]	B[123]
 Centroide 2 : R[218]	G[213]	B[201]
 Centroide 3 : R[97]	G[81]	B[63]
 
-Time to Kmeans is 3 seconds and 346581 microseconds
+Time to Kmeans is 1 seconds and 28188 microseconds
 Checksum value = 12689895
 
  Performance counter stats for 'Executables/kmeans_seq test 4 imagen.bmp':
 
-          3.439,09 msec task-clock:u              #    0,999 CPUs utilized          
+          1.060,16 msec task-clock:u              #    0,998 CPUs utilized          
                  0      context-switches:u        #    0,000 /sec                   
                  0      cpu-migrations:u          #    0,000 /sec                   
-             1.024      page-faults:u             #  297,753 /sec                   
-    10.951.072.047      cycles:u                  #    3,184 GHz                    
-     2.015.862.647      stalled-cycles-frontend:u #   18,41% frontend cycles idle   
-     1.630.587.720      stalled-cycles-backend:u  #   14,89% backend cycles idle    
-    21.570.544.411      instructions:u            #    1,97  insn per cycle         
-                                                  #    0,09  stalled cycles per insn
-     1.982.538.169      branches:u                #  576,472 M/sec                  
-       109.157.508      branch-misses:u           #    5,51% of all branches        
+               513      page-faults:u             #  483,890 /sec                   
+     4.389.854.586      cpu_core/cycles:u/        #    4,141 G/sec                  
+    21.570.538.011      cpu_core/instructions:u/  #   20,347 G/sec                  
+     1.982.534.112      cpu_core/branches:u/      #    1,870 G/sec                  
+        21.344.164      cpu_core/branch-misses:u/ #   20,133 M/sec                  
 
-       3,441996850 seconds time elapsed
+       1,062717159 seconds time elapsed
 
-       3,423528000 seconds user
-       0,010968000 seconds sys
+       1,054313000 seconds user
+       0,004975000 seconds sys
 
 
 K = 8
@@ -101,27 +95,24 @@ Centroide 5 : R[26]	G[19]	B[15]
 Centroide 6 : R[229]	G[226]	B[216]
 Centroide 7 : R[154]	G[142]	B[126]
 
-Time to Kmeans is 11 seconds and 585383 microseconds
+Time to Kmeans is 4 seconds and 6737 microseconds
 Checksum value = 22329779
 
  Performance counter stats for 'Executables/kmeans_seq test 8 imagen.bmp':
 
-         11.675,81 msec task-clock:u              #    1,000 CPUs utilized          
+          4.036,52 msec task-clock:u              #    0,999 CPUs utilized          
                  0      context-switches:u        #    0,000 /sec                   
                  0      cpu-migrations:u          #    0,000 /sec                   
-               513      page-faults:u             #   43,937 /sec                   
-    37.270.530.774      cycles:u                  #    3,192 GHz                    
-     4.168.431.159      stalled-cycles-frontend:u #   11,18% frontend cycles idle   
-     2.973.541.489      stalled-cycles-backend:u  #    7,98% backend cycles idle    
-    85.440.375.879      instructions:u            #    2,29  insn per cycle         
-                                                  #    0,05  stalled cycles per insn
-     7.772.040.575      branches:u                #  665,653 M/sec                  
-       227.178.308      branch-misses:u           #    2,92% of all branches        
+             1.024      page-faults:u             #  253,684 /sec                   
+    17.538.776.414      cpu_core/cycles:u/        #    4,345 G/sec                  
+    85.440.365.274      cpu_core/instructions:u/  #   21,167 G/sec                  
+     7.772.032.340      cpu_core/branches:u/      #    1,925 G/sec                  
+        84.618.919      cpu_core/branch-misses:u/ #   20,963 M/sec                  
 
-      11,678866724 seconds time elapsed
+       4,039193135 seconds time elapsed
 
-      11,653220000 seconds user
-       0,006981000 seconds sys
+       4,030189000 seconds user
+       0,003995000 seconds sys
 
 
 K = 16
@@ -154,27 +145,24 @@ Centroide 13 : R[240]	G[237]	B[228]
 Centroide 14 : R[73]	G[71]	B[63]
 Centroide 15 : R[193]	G[151]	B[109]
 
-Time to Kmeans is 21 seconds and 266182 microseconds
+Time to Kmeans is 6 seconds and 793073 microseconds
 Checksum value = 42559141
 
  Performance counter stats for 'Executables/kmeans_seq test 16 imagen.bmp':
 
-         21.355,81 msec task-clock:u              #    1,000 CPUs utilized          
+          6.821,99 msec task-clock:u              #    1,000 CPUs utilized          
                  0      context-switches:u        #    0,000 /sec                   
                  0      cpu-migrations:u          #    0,000 /sec                   
-               514      page-faults:u             #   24,068 /sec                   
-    68.194.431.996      cycles:u                  #    3,193 GHz                    
-     8.681.105.389      stalled-cycles-frontend:u #   12,73% frontend cycles idle   
-     8.542.354.966      stalled-cycles-backend:u  #   12,53% backend cycles idle    
-   144.699.237.421      instructions:u            #    2,12  insn per cycle         
-                                                  #    0,06  stalled cycles per insn
-    13.412.247.326      branches:u                #  628,037 M/sec                  
-       552.544.281      branch-misses:u           #    4,12% of all branches        
+               513      page-faults:u             #   75,198 /sec                   
+    29.873.794.714      cpu_core/cycles:u/        #    4,379 G/sec                  
+   144.699.219.229      cpu_core/instructions:u/  #   21,211 G/sec                  
+    13.412.231.559      cpu_core/branches:u/      #    1,966 G/sec                  
+       126.249.355      cpu_core/branch-misses:u/ #   18,506 M/sec                  
 
-      21,359246148 seconds time elapsed
+       6,824371176 seconds time elapsed
 
-      21,311504000 seconds user
-       0,015900000 seconds sys
+       6,811852000 seconds user
+       0,006986000 seconds sys
 
 
 K = 32
@@ -223,27 +211,24 @@ Centroide 29 : R[52]	G[52]	B[47]
 Centroide 30 : R[231]	G[202]	B[160]
 Centroide 31 : R[35]	G[9]	B[6]
 
-Time to Kmeans is 42 seconds and 504343 microseconds
+Time to Kmeans is 14 seconds and 164420 microseconds
 Checksum value = 73490886
 
  Performance counter stats for 'Executables/kmeans_seq test 32 imagen.bmp':
 
-         42.593,80 msec task-clock:u              #    1,000 CPUs utilized          
+         14.193,02 msec task-clock:u              #    1,000 CPUs utilized          
                  0      context-switches:u        #    0,000 /sec                   
                  0      cpu-migrations:u          #    0,000 /sec                   
-               514      page-faults:u             #   12,067 /sec                   
-   136.049.348.890      cycles:u                  #    3,194 GHz                    
-    17.386.991.175      stalled-cycles-frontend:u #   12,78% frontend cycles idle   
-    11.538.995.111      stalled-cycles-backend:u  #    8,48% backend cycles idle    
-   287.990.045.491      instructions:u            #    2,12  insn per cycle         
-                                                  #    0,06  stalled cycles per insn
-    26.981.917.446      branches:u                #  633,470 M/sec                  
-     1.291.501.286      branch-misses:u           #    4,79% of all branches        
+               516      page-faults:u             #   36,356 /sec                   
+    62.202.491.411      cpu_core/cycles:u/        #    4,383 G/sec                  
+   287.990.013.651      cpu_core/instructions:u/  #   20,291 G/sec                  
+    26.981.887.962      cpu_core/branches:u/      #    1,901 G/sec                  
+       343.117.356      cpu_core/branch-misses:u/ #   24,175 M/sec                  
 
-      42,598533917 seconds time elapsed
+      14,196562506 seconds time elapsed
 
-      42,529271000 seconds user
-       0,008980000 seconds sys
+      14,181304000 seconds user
+       0,004981000 seconds sys
 
 
 K = 64
@@ -324,26 +309,23 @@ Centroide 61 : R[80]	G[87]	B[82]
 Centroide 62 : R[39]	G[40]	B[39]
 Centroide 63 : R[71]	G[25]	B[11]
 
-Time to Kmeans is 299 seconds and 752863 microseconds
+Time to Kmeans is 112 seconds and 994385 microseconds
 Checksum value = 124269810
 
  Performance counter stats for 'Executables/kmeans_seq test 64 imagen.bmp':
 
-        299.881,57 msec task-clock:u              #    1,000 CPUs utilized          
+        113.017,44 msec task-clock:u              #    1,000 CPUs utilized          
                  0      context-switches:u        #    0,000 /sec                   
                  0      cpu-migrations:u          #    0,000 /sec                   
-               514      page-faults:u             #    1,714 /sec                   
-   958.028.936.630      cycles:u                  #    3,195 GHz                    
-   132.443.938.777      stalled-cycles-frontend:u #   13,82% frontend cycles idle   
-    78.284.714.644      stalled-cycles-backend:u  #    8,17% backend cycles idle    
- 2.245.504.831.789      instructions:u            #    2,34  insn per cycle         
-                                                  #    0,06  stalled cycles per insn
-   211.499.474.987      branches:u                #  705,277 M/sec                  
-     6.796.645.273      branch-misses:u           #    3,21% of all branches        
+               516      page-faults:u             #    4,566 /sec                   
+   495.238.317.688      cpu_core/cycles:u/        #    4,382 G/sec                  
+ 2.245.504.639.879      cpu_core/instructions:u/  #   19,869 G/sec                  
+   211.499.285.462      cpu_core/branches:u/      #    1,871 G/sec                  
+     3.173.707.575      cpu_core/branch-misses:u/ #   28,082 M/sec                  
 
-     299,899199641 seconds time elapsed
+     113,026399613 seconds time elapsed
 
-     299,472667000 seconds user
-       0,016701000 seconds sys
+     112,957160000 seconds user
+       0,003993000 seconds sys
 
 
