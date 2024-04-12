@@ -2,12 +2,28 @@
 #SBATCH --job-name=openmp
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH --partition=nodo.q
+#SBATCH --partition=cuda-ext.q
 #SBATCH --exclusive
-#SBATCH --output=Outputs/seq-test.txt 
+#SBATCH --output=Outputs/seq-aolin.txt 
 
 gcc -Ofast kmeans.c kmeanslib.c -o Executables/kmeans_seq -lm # Compile code
 
-echo Execució de prova
+echo Sequential execution
 
-perf stat Executables/kmeans_seq test 4 imagen.bmp # Execute with perf profiler to measure time, k = 4
+echo K = 2 
+perf stat Executables/kmeans_seq test 2 imagen.bmp # Execute with perf profiler to measure time
+
+echo K = 4 
+perf stat Executables/kmeans_seq test 4 imagen.bmp # Execute with perf profiler to measure time
+
+echo K = 8 
+perf stat Executables/kmeans_seq test 8 imagen.bmp # Execute with perf profiler to measure time
+
+echo K = 16 
+perf stat Executables/kmeans_seq test 16 imagen.bmp # Execute with perf profiler to measure time
+
+echo K = 32 
+perf stat Executables/kmeans_seq test 32 imagen.bmp # Execute with perf profiler to measure time
+
+echo K = 64 
+perf stat Executables/kmeans_seq test 64 imagen.bmp # Execute with perf profiler to measure time
