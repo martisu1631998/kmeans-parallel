@@ -2,7 +2,7 @@
 #SBATCH --job-name=openmp
 #SBATCH -N 1
 #SBATCH -n 1
-#SBATCH --partition=cuda-ext.q
+#SBATCH --partition=aolin.q
 #SBATCH --exclusive
 #SBATCH --output=Outputs/seq-aolin.txt 
 
