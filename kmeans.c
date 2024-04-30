@@ -14,11 +14,9 @@
  *
  */
 int main(int argc, char *argv[]) {
-	uint8_t closest, test, k;
-	uint32_t i, j;
+	uint8_t test, k;	
 //	FILE *fp;
-	cluster* centroids;
-	rgb pixel;
+	cluster* centroids;	
 
 	if (argc != 4 && argc != 5){
 	printf("Usage: %s test|exec k imagen.bmp [salida.bmp]\n\nTest: No output \nExec: Image + cluster.txt generated\n", argv[0]);

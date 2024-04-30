@@ -11,18 +11,19 @@
 module load cuda/11.2
 module load nvhpc/21.2
 
-#nvc -acc=gpu -ta=tesla -Minfo=all -o executable $1 
-#nvc -Minfo=all -o executable $1
-nvcc -o executable $1 -lm -lcudart
+#nvc -acc=gpu -ta=tesla -Minfo=all -o executable $1 $2  # OpenACC
+nvc -Minfo=all -o executable $1 $2 # Sequential
+#nvcc -o executable $1 $2 -lm -lcudart # CUDA
 
-if [ "$2" = "-prof" ]; then
+if [ "$3" = "-prof" ]; then
 	echo "Nvidia profiler"
 	#pgaccelinfo
-	nsys nvprof --print-gpu-trace ./executable 
+	nsys nvprof --print-gpu-trace ./executable test 2 imagen.bmp
+	rm report1.qdrep 
+	rm report1.sqlite
+
 else 
-	./executable
+	./executable test 2 imagen.bmp
 fi
 
 rm executable 
-rm report1.qdrep
-rm report1.sqlite
