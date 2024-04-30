@@ -238,12 +238,15 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		}		
 
 		#pragma acc data copy(vr[:k], vg[:k], vb[:k], vp[:k])
+		{
+		#pragma omp kernels
 		for(j = 0; j < num_pixels; j++) 
     	{	
 			vr[closes_by_pixel[j]] += pixels[j].r;
 			vg[closes_by_pixel[j]] += pixels[j].g;
 			vb[closes_by_pixel[j]] += pixels[j].b;
 			vp[closes_by_pixel[j]]++;						
+		}
 		}
 
 		// Assign the obtained values to the centroides variable
