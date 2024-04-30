@@ -1,0 +1,35 @@
+#!/bin/bash
+#SBATCH --job-name=openmp
+#SBATCH -N 1
+#SBATCH -n 1
+#SBATCH --partition=aolin.q
+#SBATCH --exclusive
+#SBATCH --output=Outputs/2k-aolin.txt 
+
+gcc -fopenmp -Ofast kmeans.c kmeanslib_parallel.c -o Executables/kmeans_par -lm # Compile code
+
+echo Execution with K = 2
+
+echo 2 Threads
+export OMP_NUM_THREADS=2 # Set number of threads
+perf stat Executables/kmeans_par test 2 imagen.bmp # Execute with perf profiler to measure time, k = 2
+
+echo 4 Threads
+export OMP_NUM_THREADS=4 # Set number of threads
+perf stat Executables/kmeans_par test 2 imagen.bmp # Execute with perf profiler to measure time, k = 2
+
+echo 6 Threads
+export OMP_NUM_THREADS=6 # Set number of threads
+perf stat Executables/kmeans_par test 2 imagen.bmp # Execute with perf profiler to measure time, k = 2
+
+echo 8 Threads
+export OMP_NUM_THREADS=8 # Set number of threads
+perf stat Executables/kmeans_par test 2 imagen.bmp # Execute with perf profiler to measure time, k = 2
+
+echo 10 Threads
+export OMP_NUM_THREADS=10 # Set number of threads
+perf stat Executables/kmeans_par test 2 imagen.bmp # Execute with perf profiler to measure time, k = 2
+
+echo 12 Threads
+export OMP_NUM_THREADS=12 # Set number of threads
+perf stat Executables/kmeans_par exec 2 imagen.bmp Outputs/2k-aolin.bmp # Execute with perf profiler to measure time, k = 2
