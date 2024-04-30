@@ -194,7 +194,8 @@ uint8_t find_closest_centroid(rgb* p, cluster* centroids, uint8_t num_clusters){
  */
 void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){	
 	uint8_t condition, changed, closest; 
-	uint32_t i, j, random_num, vr[k], vg[k], vb[k], vp[k]; // Initialize four helper vectors to parallelize the code		
+	uint32_t i, j, random_num;
+	uint32_t vr[k], vg[k], vb[k], vp[k], closest_by_pixel[num_pixels]; // Initialize four helper vectors to parallelize the code		
 	
 	printf("STEP 1: K = %d\n", k);
 	k = MIN(k, num_pixels);
@@ -229,15 +230,21 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		}	
 		
 		// Find closest cluster for each pixel		
-		#pragma omp parallel for private(closest) reduction(+: vr[:k], vg[:k], vb[:k], vp[:k]) // Parallelizing the for with a reduction				
-		for(j = 0; j < num_pixels; j++) 
+// 		#pragma acc data copyin(&pixels[j], centroides, k, closest_by_pixel) copyout(closest_by_pixel)
+>		for(j = 0; j < num_pixels; j++) 
     	{
 			closest = find_closest_centroid(&pixels[j], centroides, k);
-			vr[closest] += pixels[j].r;			
-			vg[closest] += pixels[j].g;
-			vb[closest] += pixels[j].b;
-			vp[closest]++;						
+			closest_by_pixel[j] = closest
 		}		
+
+		#pragma acc data copy(vr[:k], vg[:k], vb[:k], vp[:k])
+		for(j = 0; j < num_pixels; j++) 
+    	{	
+			vr[closes_by_pixel[j]] += pixels[j].r;
+			vg[closes_by_pixel[j]] += pixels[j].g;
+			vb[closes_by_pixel[j]] += pixels[j].b;
+			vp[closes_by_pixel[j]]++;						
+		}
 
 		// Assign the obtained values to the centroides variable
 		for(j = 0; j < k; j++)
