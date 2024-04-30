@@ -1,0 +1,14 @@
+"kmeanslib.c", line 137: warning: missing return statement at end of non-void function "write_file"
+  }
+  ^
+
+"kmeanslib.c", line 145: warning: variable "j" was declared but never referenced
+    uint32_t i,j;
+               ^
+ 
+/usr/lib64/crt1.o: En la función `_start':
+(.text+0x24): referencia a `main' sin definir
+/var/spool/slurmd/job19901/slurm_script: línea 23: ./executable: No existe el fichero o el directorio
+rm: no se puede borrar 'executable': No existe el fichero o el directorio
+rm: no se puede borrar 'report1.qdrep': No existe el fichero o el directorio
+rm: no se puede borrar 'report1.sqlite': No existe el fichero o el directorio

@@ -11,9 +11,9 @@
 module load cuda/11.2
 module load nvhpc/21.2
 
-#nvc -acc=gpu -ta=tesla -Minfo=all -o executable $1 
-#nvc -Minfo=all -o executable $1
-nvcc -o executable $1 -lm -lcudart
+#nvc -acc=gpu -ta=tesla -Minfo=all -o executable $1  # OpenACC
+nvc -Minfo=all -o executable $1 # Sequential
+#nvcc -o executable $1 -lm -lcudart # CUDA
 
 if [ "$2" = "-prof" ]; then
 	echo "Nvidia profiler"
