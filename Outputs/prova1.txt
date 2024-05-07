@@ -1,4 +1,4 @@
-kmeanslib.c:
+kmeanslibACC.c:
 kmeans.c:
 TEST = 1
 
@@ -21,5 +21,5 @@ Centroide 5 : R[26]	G[19]	B[15]
 Centroide 6 : R[229]	G[226]	B[216]
 Centroide 7 : R[154]	G[142]	B[126]
 
-Time to Kmeans is 22 seconds and 173989 microseconds
+Time to Kmeans is 11 seconds and 54013 microseconds
 Checksum value = 22329779
