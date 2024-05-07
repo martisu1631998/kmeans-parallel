@@ -229,10 +229,38 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 			vp[j] = 0;	
 		}
 		
-		for(j=0; j < num_pixels; j++)
-		{
-			closest = find_closest_centroid(&pixels[j], centroides, k);
+		// Find closest cluster for each pixel
+		// Inside we have the find closest centroids 
+		#pragma acc data copyin(pixels, centroides, k) copyout(closest){
+		#pragma acc parallel loop num_gangs(num_pixels/64) vector_length(64)		
+		for(j = 0; j < num_pixels; j++) 
+    	{
+			// rgb* p = &pixels[j];
+			uint8_t p_b = &pixels[j].b;
+			uint8_t p_g = &pixels[j].g;
+			uint8_t p_r = &pixels[j].r;
+			uint32_t min = UINT32_MAX;
+			uint32_t dis[k];
+			uint8_t closest = 0, j;
+			int16_t diffR, diffG, diffB;	
+
+			// Iterate through num_pixels
+			for(int l = 0; l < k; l++) 
+			{
+				diffR = centroides[l].r - p_r;
+				diffG = centroides[l].g - p_g;
+				diffB = centroides[l].b - p_b; 
+				// No sqrt required.
+				dis[l] = diffR*diffR + diffG*diffG + diffB*diffB;
+				
+				if(dis[l] < min) 
+				{
+					min = dis[l];
+					closest = l;
+				}
+			}
 			move[j] = closest;
+		}
 		}
    
 		// Find closest cluster for each pixel
