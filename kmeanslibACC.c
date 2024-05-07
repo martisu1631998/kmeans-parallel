@@ -234,12 +234,11 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		#pragma acc data copy(move[:num_pixels]) copyin(pixels[:num_pixels], centroides[:k], k)
 		{
 		#pragma acc parallel loop num_gangs(num_pixels/64) vector_length(64)		
-		for(j = 0; j < num_pixels; j++) 
+		for(int j = 0; j < num_pixels; j++) 
     	{
 			// rgb* p = &pixels[j];
 			uint32_t min = UINT32_MAX;
-			uint32_t dis;
-			uint8_t j;
+			uint32_t dis;			
 			int16_t diffR, diffG, diffB;	
 
 			// Iterate through num_pixels
