@@ -1,29 +1,30 @@
 kmeanslib_ACC.c:
-"kmeanslib_ACC.c", line 137: warning: missing return statement at end of non-void function "write_file"
-  }y
-  ^
-
-"kmeanslib_ACC.c", line 145: warning: variable "j" was declared but never referenced
+"kmeanslib_ACC.c", line 146: warning: variable "j" was declared but never referenced
     uint32_t i,j;
                ^
 
-"kmeanslib_ACC.c", line 234: error: expected an expression
+"kmeanslib_ACC.c", line 235: error: expected an expression
   >		for(j = 0; j < num_pixels; j++) 
   ^
 
-"kmeanslib_ACC.c", line 262: warning: parsing restarts here after previous syntax error
+"kmeanslib_ACC.c", line 263: warning: parsing restarts here after previous syntax error
   		condition = 0;
   		             ^
 
-"kmeanslib_ACC.c", line 196: warning: variable "closest" was declared but never referenced
+"kmeanslib_ACC.c", line 197: warning: variable "closest" was declared but never referenced
   	uint8_t condition, changed, closest; 
   	                            ^
 
-"kmeanslib_ACC.c", line 198: warning: variable "closest_by_pixel" was declared but never referenced
+"kmeanslib_ACC.c", line 199: warning: variable "closest_by_pixel" was declared but never referenced
   	uint32_t vr[k], vg[k], vb[k], vp[k], closest_by_pixel[num_pixels]; // Initialize four helper vectors to parallelize the code		
   	                                     ^
 
 1 error detected in the compilation of "kmeanslib_ACC.c".
 kmeans.c:
-/var/spool/slurmd/job20032/slurm_script: línea 26: ./executable: No existe el fichero o el directorio
+Nvidia profiler
+WARNING: executable and any of its children processes will be profiled.
+
+No such file or directory: ./executable
+rm: no se puede borrar 'report1.qdrep': No existe el fichero o el directorio
+rm: no se puede borrar 'report1.sqlite': No existe el fichero o el directorio
 rm: no se puede borrar 'executable': No existe el fichero o el directorio

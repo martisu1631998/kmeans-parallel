@@ -134,6 +134,7 @@ int write_file(char *name, image *mImage, cluster*centroids, uint8_t k){
 			printf("Error closing fichero.\n");
 			return 1;
 		}
+	return 0;
 }
 
 /*
@@ -142,7 +143,7 @@ int write_file(char *name, image *mImage, cluster*centroids, uint8_t k){
  *
  */
 uint32_t getChecksum(cluster* centroids, uint8_t k){
-  uint32_t i,j;
+  uint32_t i; //,j
   uint32_t sum = 0;
   
   for (i = 0; i < k; i++)
