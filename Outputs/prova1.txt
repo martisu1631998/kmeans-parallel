@@ -1,36 +1,29 @@
-kmeanslib.c:
+kmeanslib_ACC.c:
+"kmeanslib_ACC.c", line 137: warning: missing return statement at end of non-void function "write_file"
+  }y
+  ^
+
+"kmeanslib_ACC.c", line 145: warning: variable "j" was declared but never referenced
+    uint32_t i,j;
+               ^
+
+"kmeanslib_ACC.c", line 234: error: expected an expression
+  >		for(j = 0; j < num_pixels; j++) 
+  ^
+
+"kmeanslib_ACC.c", line 262: warning: parsing restarts here after previous syntax error
+  		condition = 0;
+  		             ^
+
+"kmeanslib_ACC.c", line 196: warning: variable "closest" was declared but never referenced
+  	uint8_t condition, changed, closest; 
+  	                            ^
+
+"kmeanslib_ACC.c", line 198: warning: variable "closest_by_pixel" was declared but never referenced
+  	uint32_t vr[k], vg[k], vb[k], vp[k], closest_by_pixel[num_pixels]; // Initialize four helper vectors to parallelize the code		
+  	                                     ^
+
+1 error detected in the compilation of "kmeanslib_ACC.c".
 kmeans.c:
-Nvidia profiler
-WARNING: executable and any of its children processes will be profiled.
-
-Collecting data...
-TEST = 1
-
-WIDTH : 3840
-HEIGHT: 2160
-LENGHT: 8294400
-
-STEP 1: K = 2
-STEP 2: Init centroids
-STEP 3: Updating centroids
-
-Number of K-Means iterations: 9
-
-Centroide 0 : R[68]	G[56]	B[45]
-Centroide 1 : R[196]	G[186]	B[171]
-
-Time to Kmeans is 1 seconds and 495067 microseconds
-Checksum value = 6405336
-Processing events...
-Saving temporary "/tmp/nsys-report-980b-9a32-5285-ce21.qdstrm" file to disk...
-
-Creating final output files...
-Processing [0%                                                                ]Processing [2%                                                                ]Processing [=5%                                                               ]Processing [==============================51%                                 ]Processing [=============================================================97%  ]Processing [=============================================================98%  ]Processing [==============================================================100%]Processing [==============================================================100%]
-Saved report file to "/tmp/nsys-report-980b-9a32-5285-ce21.qdrep"
-Exporting 294 events: [1%                                                     ]Exporting 294 events: [2%                                                     ]Exporting 294 events: [3%                                                     ]Exporting 294 events: [4%                                                     ]Exporting 294 events: [5%                                                     ]Exporting 294 events: [=6%                                                    ]Exporting 294 events: [=7%                                                    ]Exporting 294 events: [==8%                                                   ]Exporting 294 events: [==9%                                                   ]Exporting 294 events: [==10%                                                  ]Exporting 294 events: [===11%                                                 ]Exporting 294 events: [===12%                                                 ]Exporting 294 events: [====13%                                                ]Exporting 294 events: [====14%                                                ]Exporting 294 events: [=====15%                                               ]Exporting 294 events: [=====16%                                               ]Exporting 294 events: [======17%                                              ]Exporting 294 events: [======18%                                              ]Exporting 294 events: [=======19%                                             ]Exporting 294 events: [========20%                                            ]Exporting 294 events: [========21%                                            ]Exporting 294 events: [=========22%                                           ]Exporting 294 events: [=========23%                                           ]Exporting 294 events: [==========24%                                          ]Exporting 294 events: [==========25%                                          ]Exporting 294 events: [===========26%                                         ]Exporting 294 events: [===========27%                                         ]Exporting 294 events: [============28%                                        ]Exporting 294 events: [============29%                                        ]Exporting 294 events: [=============30%                                       ]Exporting 294 events: [==============31%                                      ]Exporting 294 events: [==============32%                                      ]Exporting 294 events: [===============33%                                     ]Exporting 294 events: [===============34%                                     ]Exporting 294 events: [================35%                                    ]Exporting 294 events: [================36%                                    ]Exporting 294 events: [=================37%                                   ]Exporting 294 events: [=================38%                                   ]Exporting 294 events: [==================39%                                  ]Exporting 294 events: [===================40%                                 ]Exporting 294 events: [===================41%                                 ]Exporting 294 events: [====================42%                                ]Exporting 294 events: [====================43%                                ]Exporting 294 events: [=====================44%                               ]Exporting 294 events: [=====================45%                               ]Exporting 294 events: [======================46%                              ]Exporting 294 events: [======================47%                              ]Exporting 294 events: [=======================48%                             ]Exporting 294 events: [=======================49%                             ]Exporting 294 events: [========================50%                            ]Exporting 294 events: [=========================51%                           ]Exporting 294 events: [=========================52%                           ]Exporting 294 events: [==========================53%                          ]Exporting 294 events: [==========================54%                          ]Exporting 294 events: [===========================55%                         ]Exporting 294 events: [===========================56%                         ]Exporting 294 events: [============================57%                        ]Exporting 294 events: [============================58%                        ]Exporting 294 events: [=============================59%                       ]Exporting 294 events: [==============================60%                      ]Exporting 294 events: [==============================61%                      ]Exporting 294 events: [===============================62%                     ]Exporting 294 events: [===============================63%                     ]Exporting 294 events: [================================64%                    ]Exporting 294 events: [================================65%                    ]Exporting 294 events: [=================================66%                   ]Exporting 294 events: [=================================67%                   ]Exporting 294 events: [==================================68%                  ]Exporting 294 events: [==================================69%                  ]Exporting 294 events: [===================================70%                 ]Exporting 294 events: [====================================71%                ]Exporting 294 events: [====================================72%                ]Exporting 294 events: [=====================================73%               ]Exporting 294 events: [=====================================74%               ]Exporting 294 events: [======================================75%              ]Exporting 294 events: [======================================76%              ]Exporting 294 events: [=======================================77%             ]Exporting 294 events: [=======================================78%             ]Exporting 294 events: [========================================79%            ]Exporting 294 events: [=========================================80%           ]Exporting 294 events: [=========================================81%           ]Exporting 294 events: [==========================================82%          ]Exporting 294 events: [==========================================83%          ]Exporting 294 events: [===========================================84%         ]Exporting 294 events: [===========================================85%         ]Exporting 294 events: [============================================86%        ]Exporting 294 events: [============================================87%        ]Exporting 294 events: [=============================================88%       ]Exporting 294 events: [=============================================89%       ]Exporting 294 events: [==============================================90%      ]Exporting 294 events: [===============================================91%     ]Exporting 294 events: [===============================================92%     ]Exporting 294 events: [================================================93%    ]Exporting 294 events: [================================================94%    ]Exporting 294 events: [=================================================95%   ]Exporting 294 events: [=================================================96%   ]Exporting 294 events: [==================================================97%  ]Exporting 294 events: [==================================================98%  ]Exporting 294 events: [===================================================99% ]Exporting 294 events: [===================================================100%]
-
-Exported successfully to
-/tmp/nsys-report-980b-9a32-5285-ce21.sqlite
-Report file moved to "/home/alumnos/ppia/ppia-11/Pràctiques/KMeans/kmeans-parallel/report1.qdrep"
-Report file moved to "/home/alumnos/ppia/ppia-11/Pràctiques/KMeans/kmeans-parallel/report1.sqlite"
-
+/var/spool/slurmd/job20032/slurm_script: línea 26: ./executable: No existe el fichero o el directorio
+rm: no se puede borrar 'executable': No existe el fichero o el directorio

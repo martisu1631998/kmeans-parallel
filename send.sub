@@ -11,8 +11,8 @@
 module load cuda/11.2
 module load nvhpc/21.2
 
-#nvc -acc=gpu -ta=tesla -Minfo=all -o executable kmeanslib.c kmeans.c  # OpenACC
-nvc -Minfo=all -o executable kmeanslib.c kmeans.c # Sequential
+nvc -acc=gpu -ta=tesla -Minfo=all -o executable kmeanslib_ACC.c kmeans.c  # OpenACC
+# nvc -Minfo=all -o executable kmeanslib.c kmeans.c # Sequential
 #nvcc -o executable kmeanslib.c kmeans.c -lm -lcudart # CUDA
 
 if [ "$1" = "-prof" ]; then
