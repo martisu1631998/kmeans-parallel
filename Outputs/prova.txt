@@ -1,0 +1,11 @@
+kmeanslib_ACC.c:
+kmeans:
+    242, Generating copy(vr[:k],vp[:k],vb[:k],vg[:k]) [if not already present]
+kmeans.c:
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+/var/spool/slurmd/job23920/slurm_script: línea 27: 1966253 Violación de segmento  (`core' generado) ./executable test 2 imagen.bmp

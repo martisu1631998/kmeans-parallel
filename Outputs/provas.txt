@@ -1,0 +1,27 @@
+kmeanslib_ACCprova.c:
+"kmeanslib_ACCprova.c", line 137: warning: missing return statement at end of non-void function "write_file"
+  }
+  ^
+
+"kmeanslib_ACCprova.c", line 145: warning: variable "j" was declared but never referenced
+    uint32_t i,j;
+               ^
+
+kmeans.c:
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 2
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 9
+
+Centroide 0 : R[68]	G[56]	B[45]
+Centroide 1 : R[196]	G[186]	B[171]
+
+Time to Kmeans is 0 seconds and 752537 microseconds
+Checksum value = 6405336

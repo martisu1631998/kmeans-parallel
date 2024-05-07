@@ -3,15 +3,15 @@
 #SBATCH -N 1 # number of nodes
 #SBATCH --partition=cuda-ext.q
 #SBATCH --gres=gpu:GeForceRTX3080:1
-#SBATCH --output=Outputs/prova1.txt
+#SBATCH --output=Outputs/provas.txt
 
 #Queue “cuda-int” contains two GPU nodes (aolin-gpu-2 and aolin-gpu-4) with 3 GPUs: 1 x RTX3080, 1 x GTX1080Ti, 1 x GTX1080 - accessible from the PCs from inside the laboratory
 #Queue “cuda-ext” contains two GPU nodes (aolin-gpu-1 and aolin-gpu-3) with 3 GPUs: 1 x RTX3080, 1 x RTX2070, 1 x GTX1080Ti - accessible remotely
 
 module load cuda/11.2
-module load nvhpc/21.2
+module load nvhpc/21.2 
 
-nvc -acc=gpu -ta=tesla -Minfo=all -o executable kmeanslib_ACC.c kmeans.c  # OpenACC
+nvc -acc=gpu -ta=tesla -Minfo=all -o executable kmeanslib_ACCprova.c kmeans.c  # OpenACC
 # nvc -Minfo=all -o executable kmeanslib.c kmeans.c # Sequential
 #nvcc -o executable kmeanslib.c kmeans.c -lm -lcudart # CUDA
 
