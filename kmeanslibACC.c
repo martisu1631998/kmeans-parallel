@@ -238,7 +238,7 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
     	{
 			// rgb* p = &pixels[j];
 			uint32_t min = UINT32_MAX;
-			uint32_t dis;			
+			uint32_t dis;
 			int16_t diffR, diffG, diffB;	
 
 			// Iterate through num_pixels
