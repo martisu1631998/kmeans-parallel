@@ -194,7 +194,7 @@ uint8_t find_closest_centroid(rgb* p, cluster* centroids, uint8_t num_clusters){
  * input @param: pixels 	--> pinter to array of rgb (pixels)
  */
 void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){	
-	uint8_t condition, changed, closest; 
+	uint8_t condition, changed, closest, move[num_pixels]; 
 	uint32_t i, j, random_num, vr[k], vg[k], vb[k], vp[k]; // Initialize four helper vectors to parallelize the code		
 	
 	printf("STEP 1: K = %d\n", k);
@@ -228,23 +228,28 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 			vb[j] = 0;		
 			vp[j] = 0;				
 		}	
-		
-		// Find closest cluster for each pixel		
+		a
+		// Find closest cluster for each pixel
+		// Inside we have the find closest centroids 
+		#pragma acc data copyin(pixels, centroides, k) copyout(closest){
+		#pragma acc parallel loop num_gangs(num_pixels/64) vector_length(64)		
 		for(j = 0; j < num_pixels; j++) 
     	{
-			// closest = find_closest_centroid(&pixels[j], centroides, k);
-			// uint8_t find_closest_centroid(rgb* p, cluster* centroids, uint8_t num_clusters){
-			rgb* p = &pixels[j]
+			// rgb* p = &pixels[j];
+			uint8_t p_b = &pixels[j].b;
+			uint8_t p_g = &pixels[j].g;
+			uint8_t p_r = &pixels[j].r;
 			uint32_t min = UINT32_MAX;
 			uint32_t dis[k];
 			uint8_t closest = 0, j;
 			int16_t diffR, diffG, diffB;	
 
-			for(l = 0; l < k; l++) 
+			// Iterate through num_pixels
+			for(int l = 0; l < k; l++) 
 			{
-				diffR = centroides[l].r - p->r;
-				diffG = centroides[l].g - p->g;
-				diffB = centroides[l].b - p->b; 
+				diffR = centroides[l].r - p_r;
+				diffG = centroides[l].g - p_g;
+				diffB = centroides[l].b - p_b; 
 				// No sqrt required.
 				dis[l] = diffR*diffR + diffG*diffG + diffB*diffB;
 				
@@ -254,21 +259,17 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 					closest = l;
 				}
 			}
+			move[j] = closest;
+		}
 		}
 
 		for(j = 0; j < num_pixels; j++) 
     	{
-			vr[closest] += pixels[j].r;			
-			vg[closest] += pixels[j].g;
-			vb[closest] += pixels[j].b;
-			vp[closest]++;						
+			vr[move[j]] += pixels[j].r;			
+			vg[move[j]] += pixels[j].g;
+			vb[move[j]] += pixels[j].b;
+			vp[move[j]]++;						
 		}
-
-		#pragma acc data copy(vr, vg, vb, vp)
-		#pragma acc parallel for reduction(vr)
-		for (j=0; j<num_pixels; j++){
-			
-		}		
 
 		// Assign the obtained values to the centroides variable
 		for(j = 0; j < k; j++)

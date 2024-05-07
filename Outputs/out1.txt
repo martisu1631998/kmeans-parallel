@@ -1,0 +1,22 @@
+kmeanslib_ACC.c:
+"kmeanslib_ACC.c", line 260: warning: variable "j" is used before its value is set
+  			move[j] = closest;
+  			     ^
+
+NVC++-S-0155-Accelerator region ignored; see -Minfo messages  (kmeanslib_ACC.c: 237)
+kmeans:
+    235, Generating copyin(pixels[:1],k) [if not already present]
+         Generating copyout(closest) [if not already present]
+         Generating copyin(centroides[:1]) [if not already present]
+    237, Accelerator restriction: loop contains unsupported statement type
+         Accelerator region ignored
+    260, Accelerator restriction: unsupported statement type: opcode=DEALLOC
+NVC++/x86-64 Linux 21.2-0: compilation completed with severe errors
+kmeans.c:
+Nvidia profiler
+WARNING: executable and any of its children processes will be profiled.
+
+No such file or directory: ./executable
+rm: no se puede borrar 'report1.qdrep': No existe el fichero o el directorio
+rm: no se puede borrar 'report1.sqlite': No existe el fichero o el directorio
+rm: no se puede borrar 'executable': No existe el fichero o el directorio
