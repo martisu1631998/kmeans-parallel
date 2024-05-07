@@ -233,30 +233,29 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		// Inside we have the find closest centroids 
 		#pragma acc data copy(move[:num_pixels]) copyin(pixels[:num_pixels], centroides[:k], k)
 		{
-		#pragma acc parallel loop num_gangs(num_pixels/64) vector_length(64)		
-		for(int j = 0; j < num_pixels; j++) 
-    	{
-			// rgb* p = &pixels[j];
-			uint32_t min = UINT32_MAX;
-			uint32_t dis;
-			int16_t diffR, diffG, diffB;	
+			#pragma acc parallel loop num_gangs(num_pixels/64) vector_length(64)		
+			for(int j = 0; j < num_pixels; j++) 
+			{				
+				uint32_t min = UINT32_MAX;
+				uint32_t dis;
+				int16_t diffR, diffG, diffB;	
 
-			// Iterate through num_pixels
-			for(int l = 0; l < k; l++) 
-			{
-				diffR = centroides[l].r - pixels[j].r;
-				diffG = centroides[l].g - pixels[j].g;
-				diffB = centroides[l].b - pixels[j].b; 
-				// No sqrt required.
-				dis = diffR*diffR + diffG*diffG + diffB*diffB;
-				
-				if(dis < min) 
+				// Iterate through clusters
+				for(int l = 0; l < k; l++) 
 				{
-					min = dis;
-					move[j] = l;
+					diffR = centroides[l].r - pixels[j].r;
+					diffG = centroides[l].g - pixels[j].g;
+					diffB = centroides[l].b - pixels[j].b; 
+					// No sqrt required.
+					dis = diffR*diffR + diffG*diffG + diffB*diffB;
+					
+					if(dis < min) 
+					{
+						min = dis;
+						move[j] = l;
+					}
 				}
 			}
-		}
 		}
 
 		for (j = 0; j < num_pixels; j++) 
@@ -267,8 +266,7 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 			vp[move[j]]++;						
 		}
 
-		// Assign the obtained values to the centroides variable
-		#pragma omp parallel for private(closest) reduction(+: vr[:k], vg[:k], vb[:k], vp[:k]) // Parallelizing the for with a reduction
+		// Assign the obtained values to the centroides variable		
 		for(int j = 0; j < k; j++)
 		{
 			centroides[j].media_r = vr[j];

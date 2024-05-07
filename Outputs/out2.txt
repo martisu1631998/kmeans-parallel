@@ -5,9 +5,9 @@ kmeans:
          Generating copyin(pixels[:num_pixels],centroides[:k]) [if not already present]
          Generating Tesla code
         237, #pragma acc loop gang(num_pixels>>6), vector(64) /* blockIdx.x threadIdx.x */
-        245, #pragma acc loop seq
-    245, Complex loop carried dependence of centroides->g,pixels->r,pixels->g,centroides->b,pixels->b prevents parallelization
-         Loop carried scalar dependence for min at line 253
+        244, #pragma acc loop seq
+    244, Complex loop carried dependence of centroides->g,pixels->r,pixels->g,centroides->b,pixels->b prevents parallelization
+         Loop carried scalar dependence for min at line 252
          Loop carried dependence of move prevents parallelization
          Loop carried backward dependence of move prevents vectorization
          Complex loop carried dependence of move,centroides->r prevents parallelization
@@ -89,5 +89,5 @@ Centroide 61 : R[80]	G[87]	B[82]
 Centroide 62 : R[39]	G[40]	B[39]
 Centroide 63 : R[71]	G[25]	B[11]
 
-Time to Kmeans is 7 seconds and 386816 microseconds
+Time to Kmeans is 7 seconds and 447249 microseconds
 Checksum value = 124269810
