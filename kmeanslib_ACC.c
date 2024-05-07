@@ -237,6 +237,12 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 			vg[closest] += pixels[j].g;
 			vb[closest] += pixels[j].b;
 			vp[closest]++;						
+		}
+
+		#pragma acc data copy(vr, vg, vb, vp)
+		#pragma acc parallel for reduction(vr)
+		for (j=0; j<num_pixels; j++){
+			
 		}		
 
 		// Assign the obtained values to the centroides variable
