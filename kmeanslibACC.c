@@ -194,8 +194,8 @@ uint8_t find_closest_centroid(rgb* p, cluster* centroids, uint8_t num_clusters){
  * input @param: pixels 	--> pinter to array of rgb (pixels)
  */
 void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){	
-	uint8_t condition, changed, closest; 
-	uint32_t i, j, random_num, vr[k], vg[k], vb[k], vp[k]; // Initialize four helper vectors to parallelize the code		
+	uint8_t condition, changed, closest, move[num_pixels];
+	uint32_t i, j, random_num, vr[k], vg[k], vb[k], vp[k];
 	
 	printf("STEP 1: K = %d\n", k);
 	k = MIN(k, num_pixels);
@@ -207,38 +207,43 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		random_num = rand() % num_pixels;
 		centroides[i].r = pixels[random_num].r;
 		centroides[i].g = pixels[random_num].g;
-		centroides[i].b = pixels[random_num].b;				
+		centroides[i].b = pixels[random_num].b;
 	}
 
 	// K-means iterative procedures start
 	printf("STEP 3: Updating centroids\n\n");
 	i = 0;
 	do 
-  	{				
-		// Reset centroids		
+  	{
+		// Reset centroids
 		for(j = 0; j < k; j++) 
     	{
 			centroides[j].media_r = 0;
 			centroides[j].media_g = 0;
 			centroides[j].media_b = 0;
-			centroides[j].num_puntos = 0;	
+			centroides[j].num_puntos = 0;
 			// Reset also the values of the helper vectors
 			vr[j] = 0;
 			vg[j] = 0;		
 			vb[j] = 0;		
-			vp[j] = 0;				
-		}	
+			vp[j] = 0;	
+		}
 		
-		// Find closest cluster for each pixel		
-		#pragma omp parallel for private(closest) reduction(+: vr[:k], vg[:k], vb[:k], vp[:k]) // Parallelizing the for with a reduction				
-		for(j = 0; j < num_pixels; j++) 
-    	{
+		for(j=0; j < num_pixels; j++)
+		{
 			closest = find_closest_centroid(&pixels[j], centroides, k);
-			vr[closest] += pixels[j].r;			
-			vg[closest] += pixels[j].g;
-			vb[closest] += pixels[j].b;
-			vp[closest]++;						
-		}		
+			move[j] = closest;
+		}
+   
+		// Find closest cluster for each pixel
+		#pragma omp parallel for private(closest) reduction(+: vr[:k], vg[:k], vb[:k], vp[:k]) // Parallelizing the for with a reduction
+		for(j = 0; j < num_pixels; j++)
+    	{			
+			vr[move[j]] += pixels[j].r;			
+			vg[move[j]] += pixels[j].g;
+			vb[move[j]] += pixels[j].b;
+			vp[move[j]]++;			
+		}
 
 		// Assign the obtained values to the centroides variable
 		for(j = 0; j < k; j++)
