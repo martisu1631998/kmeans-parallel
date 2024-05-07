@@ -1,17 +1,17 @@
 kmeanslib_ACC.c:
-"kmeanslib_ACC.c", line 260: warning: variable "j" is used before its value is set
-  			move[j] = closest;
-  			     ^
+"kmeanslib_ACC.c", line 248: error: expression must have arithmetic type
+  				diffR = centroides[l].r - &pixels[j].r;
+  				                          ^
 
-NVC++-S-0155-Accelerator region ignored; see -Minfo messages  (kmeanslib_ACC.c: 237)
-kmeans:
-    235, Generating copyin(pixels[:1],k) [if not already present]
-         Generating copyout(closest) [if not already present]
-         Generating copyin(centroides[:1]) [if not already present]
-    237, Accelerator restriction: loop contains unsupported statement type
-         Accelerator region ignored
-    260, Accelerator restriction: unsupported statement type: opcode=DEALLOC
-NVC++/x86-64 Linux 21.2-0: compilation completed with severe errors
+"kmeanslib_ACC.c", line 249: error: expression must have arithmetic type
+  				diffG = centroides[l].g - &pixels[j].g;
+  				                          ^
+
+"kmeanslib_ACC.c", line 250: error: expression must have arithmetic type
+  				diffB = centroides[l].b - &pixels[j].b; 
+  				                          ^
+
+3 errors detected in the compilation of "kmeanslib_ACC.c".
 kmeans.c:
 Nvidia profiler
 WARNING: executable and any of its children processes will be profiled.

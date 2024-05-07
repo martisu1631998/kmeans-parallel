@@ -23,7 +23,7 @@ if [ "$1" = "-prof" ]; then
 	rm report1.sqlite
 
 else 
-	./executable test 2 imagen.bmp
+	./executable test 4 imagen.bmp
 fi
 
 rm executable 
