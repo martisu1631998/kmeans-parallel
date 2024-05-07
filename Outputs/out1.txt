@@ -1,0 +1,22 @@
+kmeanslib_ACC.c:
+"kmeanslib_ACC.c", line 248: error: expression must have arithmetic type
+  				diffR = centroides[l].r - &pixels[j].r;
+  				                          ^
+
+"kmeanslib_ACC.c", line 249: error: expression must have arithmetic type
+  				diffG = centroides[l].g - &pixels[j].g;
+  				                          ^
+
+"kmeanslib_ACC.c", line 250: error: expression must have arithmetic type
+  				diffB = centroides[l].b - &pixels[j].b; 
+  				                          ^
+
+3 errors detected in the compilation of "kmeanslib_ACC.c".
+kmeans.c:
+Nvidia profiler
+WARNING: executable and any of its children processes will be profiled.
+
+No such file or directory: ./executable
+rm: no se puede borrar 'report1.qdrep': No existe el fichero o el directorio
+rm: no se puede borrar 'report1.sqlite': No existe el fichero o el directorio
+rm: no se puede borrar 'executable': No existe el fichero o el directorio
