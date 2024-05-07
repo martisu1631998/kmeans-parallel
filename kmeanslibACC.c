@@ -268,6 +268,7 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		}
 
 		// Assign the obtained values to the centroides variable
+		#pragma omp parallel for private(closest) reduction(+: vr[:k], vg[:k], vb[:k], vp[:k]) // Parallelizing the for with a reduction
 		for(int j = 0; j < k; j++)
 		{
 			centroides[j].media_r = vr[j];
