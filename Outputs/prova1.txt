@@ -1,25 +1,387 @@
 kmeanslibACC.c:
+kmeans:
+    235, Generating copyin(k) [if not already present]
+         Generating copy(move[:num_pixels]) [if not already present]
+         Generating copyin(pixels[:num_pixels],centroides[:k]) [if not already present]
+    237, Generating Tesla code
+        237, #pragma acc loop gang(num_pixels>>6), vector(64) /* blockIdx.x threadIdx.x */
+        246, #pragma acc loop seq
+    246, Complex loop carried dependence of centroides->g,pixels->r,pixels->g,centroides->b,pixels->b prevents parallelization
+         Loop carried scalar dependence for min at line 254
+         Loop carried dependence of move prevents parallelization
+         Loop carried backward dependence of move prevents vectorization
+         Complex loop carried dependence of move,centroides->r prevents parallelization
 kmeans.c:
+Nvidia profiler
+WARNING: executable and any of its children processes will be profiled.
+
+Collecting data...
 TEST = 1
 
 WIDTH : 3840
 HEIGHT: 2160
 LENGHT: 8294400
 
-STEP 1: K = 8
+STEP 1: K = 2
 STEP 2: Init centroids
 STEP 3: Updating centroids
 
-Number of K-Means iterations: 51
+Number of K-Means iterations: 41
 
-Centroide 0 : R[49]	G[46]	B[41]
-Centroide 1 : R[90]	G[66]	B[48]
-Centroide 2 : R[194]	G[186]	B[169]
-Centroide 3 : R[98]	G[102]	B[92]
-Centroide 4 : R[155]	G[105]	B[61]
-Centroide 5 : R[26]	G[19]	B[15]
-Centroide 6 : R[229]	G[226]	B[216]
-Centroide 7 : R[154]	G[142]	B[126]
+Centroide 0 : R[119]	G[109]	B[96]
+Centroide 1 : R[120]	G[109]	B[93]
 
-Time to Kmeans is 11 seconds and 54013 microseconds
-Checksum value = 22329779
+Time to Kmeans is 1 seconds and 775724 microseconds
+Checksum value = 2461656
+Processing events...
+Saving temporary "/tmp/nsys-report-0899-776b-0823-e90b.qdstrm" file to disk...
+
+Creating final output files...
+Processing [0%                                                                ]Processing [1%                                                                ]Processing [0%                                                                ]Processing [1%                                                                ]Processing [========18%                                                       ]Processing [===================34%                                            ]Processing [====================35%                                           ]Processing [=====================================================85%          ]Processing [==============================================================100%]
+Saved report file to "/tmp/nsys-report-0899-776b-0823-e90b.qdrep"
+Exporting 1552 events: [1%                                                    ]Exporting 1552 events: [2%                                                    ]Exporting 1552 events: [3%                                                    ]Exporting 1552 events: [4%                                                    ]Exporting 1552 events: [5%                                                    ]Exporting 1552 events: [=6%                                                   ]Exporting 1552 events: [=7%                                                   ]Exporting 1552 events: [==8%                                                  ]Exporting 1552 events: [==9%                                                  ]Exporting 1552 events: [==10%                                                 ]Exporting 1552 events: [==11%                                                 ]Exporting 1552 events: [===12%                                                ]Exporting 1552 events: [====13%                                               ]Exporting 1552 events: [====14%                                               ]Exporting 1552 events: [=====15%                                              ]Exporting 1552 events: [=====16%                                              ]Exporting 1552 events: [======17%                                             ]Exporting 1552 events: [======18%                                             ]Exporting 1552 events: [=======19%                                            ]Exporting 1552 events: [=======20%                                            ]Exporting 1552 events: [========21%                                           ]Exporting 1552 events: [========22%                                           ]Exporting 1552 events: [=========23%                                          ]Exporting 1552 events: [=========24%                                          ]Exporting 1552 events: [==========25%                                         ]Exporting 1552 events: [===========26%                                        ]Exporting 1552 events: [===========27%                                        ]Exporting 1552 events: [============28%                                       ]Exporting 1552 events: [============29%                                       ]Exporting 1552 events: [=============30%                                      ]Exporting 1552 events: [=============31%                                      ]Exporting 1552 events: [==============32%                                     ]Exporting 1552 events: [==============33%                                     ]Exporting 1552 events: [===============34%                                    ]Exporting 1552 events: [===============35%                                    ]Exporting 1552 events: [================36%                                   ]Exporting 1552 events: [================37%                                   ]Exporting 1552 events: [=================38%                                  ]Exporting 1552 events: [==================39%                                 ]Exporting 1552 events: [==================40%                                 ]Exporting 1552 events: [===================41%                                ]Exporting 1552 events: [===================42%                                ]Exporting 1552 events: [====================43%                               ]Exporting 1552 events: [====================44%                               ]Exporting 1552 events: [=====================45%                              ]Exporting 1552 events: [=====================46%                              ]Exporting 1552 events: [======================47%                             ]Exporting 1552 events: [======================48%                             ]Exporting 1552 events: [=======================49%                            ]Exporting 1552 events: [========================50%                           ]Exporting 1552 events: [========================51%                           ]Exporting 1552 events: [=========================52%                          ]Exporting 1552 events: [=========================53%                          ]Exporting 1552 events: [==========================54%                         ]Exporting 1552 events: [==========================55%                         ]Exporting 1552 events: [===========================56%                        ]Exporting 1552 events: [===========================57%                        ]Exporting 1552 events: [============================58%                       ]Exporting 1552 events: [============================59%                       ]Exporting 1552 events: [=============================60%                      ]Exporting 1552 events: [=============================61%                      ]Exporting 1552 events: [==============================62%                     ]Exporting 1552 events: [===============================63%                    ]Exporting 1552 events: [===============================64%                    ]Exporting 1552 events: [================================65%                   ]Exporting 1552 events: [================================66%                   ]Exporting 1552 events: [=================================67%                  ]Exporting 1552 events: [=================================68%                  ]Exporting 1552 events: [==================================69%                 ]Exporting 1552 events: [==================================70%                 ]Exporting 1552 events: [===================================71%                ]Exporting 1552 events: [===================================72%                ]Exporting 1552 events: [====================================73%               ]Exporting 1552 events: [====================================74%               ]Exporting 1552 events: [=====================================75%              ]Exporting 1552 events: [======================================76%             ]Exporting 1552 events: [======================================77%             ]Exporting 1552 events: [=======================================78%            ]Exporting 1552 events: [=======================================79%            ]Exporting 1552 events: [========================================80%           ]Exporting 1552 events: [========================================81%           ]Exporting 1552 events: [=========================================82%          ]Exporting 1552 events: [=========================================83%          ]Exporting 1552 events: [==========================================84%         ]Exporting 1552 events: [==========================================85%         ]Exporting 1552 events: [===========================================86%        ]Exporting 1552 events: [===========================================87%        ]Exporting 1552 events: [============================================88%       ]Exporting 1552 events: [=============================================89%      ]Exporting 1552 events: [=============================================90%      ]Exporting 1552 events: [==============================================91%     ]Exporting 1552 events: [==============================================92%     ]Exporting 1552 events: [===============================================93%    ]Exporting 1552 events: [===============================================94%    ]Exporting 1552 events: [================================================95%   ]Exporting 1552 events: [================================================96%   ]Exporting 1552 events: [=================================================97%  ]Exporting 1552 events: [=================================================98%  ]Exporting 1552 events: [==================================================99% ]Exporting 1552 events: [==================================================100%]
+
+Exported successfully to
+/tmp/nsys-report-0899-776b-0823-e90b.sqlite
+
+
+CUDA API Statistics:
+
+ Time(%)  Total Time (ns)  Num Calls    Average      Minimum     Maximum            Name        
+ -------  ---------------  ---------  ------------  ----------  ----------  --------------------
+    82,0      164.257.180        123   1.335.424,0      53.931   2.656.160  cuStreamSynchronize 
+    13,0       26.438.661          1  26.438.661,0  26.438.661  26.438.661  cuMemHostAlloc      
+     2,0        4.009.655        205      19.559,0       5.460      45.321  cuMemcpyHtoDAsync_v2
+     0,0        1.380.981          5     276.196,0       6.687   1.053.472  cuMemAlloc_v2       
+     0,0        1.317.339         41      32.130,0      30.998      40.488  cuLaunchKernel      
+     0,0          975.992          1     975.992,0     975.992     975.992  cuMemAllocHost_v2   
+     0,0          739.314        143       5.170,0       2.141      16.521  cuEventRecord       
+     0,0          660.242        141       4.682,0         841      18.561  cuEventSynchronize  
+     0,0          423.691         41      10.333,0       9.485      22.954  cuMemcpyDtoHAsync_v2
+     0,0           66.733          1      66.733,0      66.733      66.733  cuModuleLoadDataEx  
+     0,0           22.179          1      22.179,0      22.179      22.179  cuStreamCreate      
+     0,0           12.744          4       3.186,0         606       4.701  cuEventCreate       
+
+
+
+CUDA Kernel Statistics:
+
+ Time(%)  Total Time (ns)  Instances  Average   Minimum  Maximum       Name     
+ -------  ---------------  ---------  --------  -------  -------  --------------
+   100,0        2.650.453         41  64.645,0   64.000   65.249  kmeans_237_gpu
+
+
+
+CUDA Memory Operation Statistics (by time):
+
+ Time(%)  Total Time (ns)  Operations    Average     Minimum    Maximum       Operation     
+ -------  ---------------  ----------  -----------  ---------  ---------  ------------------
+    80,0      219.057.192         205  1.068.571,0      2.080  2.687.887  [CUDA memcpy HtoD]
+    19,0       53.183.613          41  1.297.161,0  1.296.359  1.297.639  [CUDA memcpy DtoH]
+
+
+
+CUDA Memory Operation Statistics (by size in KiB):
+
+     Total      Operations   Average    Minimum    Maximum        Operation     
+ -------------  ----------  ---------  ---------  ----------  ------------------
+   332.100,000          41  8.100,000  8.100,000   8.100,000  [CUDA memcpy DtoH]
+ 1.328.401,000         205  6.480,000      0,000  16.383,000  [CUDA memcpy HtoD]
+
+
+
+CUDA Kernel & Memory Operations Trace:
+
+ Start(sec)  Duration(nsec)  CorrId   GrdX   GrdY  GrdZ  BlkX  BlkY  BlkZ  Reg/Trd  StcSMem  DymSMem    Bytes     Thru(MB/s)  SrcMemKd  DstMemKd            Device             Ctx  Strm         Name       
+ ----------  --------------  ------  ------  ----  ----  ----  ----  ----  -------  -------  -------  ----------  ----------  --------  --------  ---------------------------  ---  ----  ------------------
+   0,000000       1.357.704      19                                                                    8.294.400   6.109,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.311.111      22                                                                    8.105.985   6.182,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.686.062      25                                                                   16.777.215   6.246,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.304      30                                                                           40      17,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.112      33                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          65.249      36  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.297.063      38                                                                    8.294.400   6.394,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.341.863      44                                                                    8.294.400   6.181,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.310.599      45                                                                    8.105.985   6.184,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.685.934      48                                                                   16.777.215   6.246,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.144      51                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.111      52                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.896      54  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.297.383      56                                                                    8.294.400   6.393,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.340.167      60                                                                    8.294.400   6.189,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.311.976      61                                                                    8.105.985   6.178,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.686.894      64                                                                   16.777.215   6.244,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.144      67                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.112      68                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.704      70  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.297.639      74                                                                    8.294.400   6.391,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.341.063      78                                                                    8.294.400   6.184,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.309.543      79                                                                    8.105.985   6.189,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.687.118      82                                                                   16.777.215   6.243,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.144      85                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.113      86                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.640      88  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.297.351      90                                                                    8.294.400   6.393,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.341.095      94                                                                    8.294.400   6.184,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.312.487      95                                                                    8.105.985   6.176,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.687.406      98                                                                   16.777.215   6.242,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.144     101                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.112     102                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.673     104  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.297.031     108                                                                    8.294.400   6.394,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.341.639     112                                                                    8.294.400   6.182,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.311.175     113                                                                    8.105.985   6.182,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.685.582     116                                                                   16.777.215   6.247,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.720     119                                                                           40      14,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.144     120                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.769     122  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.296.711     124                                                                    8.294.400   6.396,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.340.615     128                                                                    8.294.400   6.187,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.308.935     129                                                                    8.105.985   6.192,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.686.126     132                                                                   16.777.215   6.245,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.144     135                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.112     136                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.736     138  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.297.383     142                                                                    8.294.400   6.393,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.342.088     146                                                                    8.294.400   6.180,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.310.822     147                                                                    8.105.985   6.183,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.687.694     150                                                                   16.777.215   6.242,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.144     153                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.112     154                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.736     156  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.296.711     158                                                                    8.294.400   6.396,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.339.752     162                                                                    8.294.400   6.190,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.309.895     163                                                                    8.105.985   6.188,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.685.582     166                                                                   16.777.215   6.247,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.144     169                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.112     170                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.672     172  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.296.999     176                                                                    8.294.400   6.395,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.340.840     180                                                                    8.294.400   6.185,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.310.183     181                                                                    8.105.985   6.186,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.686.127     184                                                                   16.777.215   6.245,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.145     187                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.111     188                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.672     190  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.297.479     192                                                                    8.294.400   6.392,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.342.152     196                                                                    8.294.400   6.179,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.311.239     197                                                                    8.105.985   6.181,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.686.127     200                                                                   16.777.215   6.245,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.145     203                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.111     204                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.704     206  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.297.447     210                                                                    8.294.400   6.392,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.341.895     214                                                                    8.294.400   6.181,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.310.919     215                                                                    8.105.985   6.183,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.687.375     218                                                                   16.777.215   6.242,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.144     221                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.112     222                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.704     224  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.297.319     226                                                                    8.294.400   6.393,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.341.223     230                                                                    8.294.400   6.184,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.308.903     231                                                                    8.105.985   6.192,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.687.887     234                                                                   16.777.215   6.241,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.144     237                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.112     238                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.704     240  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.296.390     244                                                                    8.294.400   6.398,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.341.351     248                                                                    8.294.400   6.183,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.310.311     249                                                                    8.105.985   6.186,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.685.998     252                                                                   16.777.215   6.246,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.144     255                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.112     256                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.705     258  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.297.415     260                                                                    8.294.400   6.393,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.341.415     264                                                                    8.294.400   6.183,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.310.663     265                                                                    8.105.985   6.184,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.685.966     268                                                                   16.777.215   6.246,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.144     271                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.112     272                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.673     274  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.297.351     278                                                                    8.294.400   6.393,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.341.927     282                                                                    8.294.400   6.180,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.309.959     283                                                                    8.105.985   6.187,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.686.350     286                                                                   16.777.215   6.245,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.144     289                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.112     290                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.705     292  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.297.351     294                                                                    8.294.400   6.393,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   0,000000       1.339.911     298                                                                    8.294.400   6.190,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       1.310.375     299                                                                    8.105.985   6.186,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000       2.686.574     302                                                                   16.777.215   6.244,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.144     305                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000           2.112     306                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   0,000000          64.897     308  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   0,000000       1.297.063     312                                                                    8.294.400   6.394,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.341.703     316                                                                    8.294.400   6.181,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.310.407     317                                                                    8.105.985   6.185,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.685.774     320                                                                   16.777.215   6.246,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     323                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     324                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.704     326  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.296.775     328                                                                    8.294.400   6.396,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.342.279     332                                                                    8.294.400   6.179,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.310.856     333                                                                    8.105.985   6.183,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.685.935     336                                                                   16.777.215   6.246,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     339                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     340                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.576     342  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.510     346                                                                    8.294.400   6.392,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.341.959     350                                                                    8.294.400   6.180,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.311.751     351                                                                    8.105.985   6.179,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.686.286     354                                                                   16.777.215   6.245,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.176     357                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     358                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.640     360  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.296.712     362                                                                    8.294.400   6.396,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.340.935     366                                                                    8.294.400   6.185,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.309.511     367                                                                    8.105.985   6.190,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.686.574     370                                                                   16.777.215   6.244,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     373                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     374                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.737     376  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.031     380                                                                    8.294.400   6.394,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.343.847     384                                                                    8.294.400   6.172,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.311.335     385                                                                    8.105.985   6.181,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.687.342     388                                                                   16.777.215   6.243,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     391                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     392                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.577     394  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.479     396                                                                    8.294.400   6.392,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.342.183     400                                                                    8.294.400   6.179,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.311.527     401                                                                    8.105.985   6.180,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.685.262     404                                                                   16.777.215   6.247,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     407                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     408                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.673     410  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.319     414                                                                    8.294.400   6.393,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.339.591     418                                                                    8.294.400   6.191,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.311.207     419                                                                    8.105.985   6.182,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.687.438     422                                                                   16.777.215   6.242,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     425                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     426                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.737     428  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.351     430                                                                    8.294.400   6.393,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.341.767     434                                                                    8.294.400   6.181,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.309.223     435                                                                    8.105.985   6.191,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.685.838     438                                                                   16.777.215   6.246,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     441                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     442                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.705     444  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.296.359     448                                                                    8.294.400   6.398,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.341.511     452                                                                    8.294.400   6.182,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.309.959     453                                                                    8.105.985   6.187,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.686.894     456                                                                   16.777.215   6.244,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.176     459                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     460                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.609     462  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.447     464                                                                    8.294.400   6.392,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.341.927     468                                                                    8.294.400   6.180,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.309.959     469                                                                    8.105.985   6.187,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.687.598     472                                                                   16.777.215   6.242,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     475                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     476                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.705     478  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.296.743     482                                                                    8.294.400   6.396,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.340.295     486                                                                    8.294.400   6.188,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.309.223     487                                                                    8.105.985   6.191,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.686.926     490                                                                   16.777.215   6.244,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     493                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     494                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.705     496  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.351     498                                                                    8.294.400   6.393,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.343.047     502                                                                    8.294.400   6.175,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.310.823     503                                                                    8.105.985   6.183,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.687.182     506                                                                   16.777.215   6.243,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     509                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     510                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.641     512  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.063     516                                                                    8.294.400   6.394,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.340.967     520                                                                    8.294.400   6.185,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.310.439     521                                                                    8.105.985   6.185,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.686.254     524                                                                   16.777.215   6.245,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     527                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     528                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.608     530  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.383     532                                                                    8.294.400   6.393,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.340.936     536                                                                    8.294.400   6.185,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.309.478     537                                                                    8.105.985   6.190,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.686.798     540                                                                   16.777.215   6.244,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.143     543                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.113     544                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.672     546  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.351     550                                                                    8.294.400   6.393,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.341.543     554                                                                    8.294.400   6.182,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.310.887     555                                                                    8.105.985   6.183,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.686.319     558                                                                   16.777.215   6.245,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     561                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     562                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.640     564  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.296.679     566                                                                    8.294.400   6.396,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.340.455     570                                                                    8.294.400   6.187,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.308.615     571                                                                    8.105.985   6.194,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.686.222     574                                                                   16.777.215   6.245,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     577                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     578                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.705     580  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.031     584                                                                    8.294.400   6.394,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.341.511     588                                                                    8.294.400   6.182,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.309.511     589                                                                    8.105.985   6.190,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.686.702     592                                                                   16.777.215   6.244,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     595                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     596                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.545     598  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.351     600                                                                    8.294.400   6.393,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.339.911     604                                                                    8.294.400   6.190,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.310.375     605                                                                    8.105.985   6.186,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.687.534     608                                                                   16.777.215   6.242,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     611                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.080     612                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.033     614  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.447     618                                                                    8.294.400   6.392,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.340.071     622                                                                    8.294.400   6.189,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.309.095     623                                                                    8.105.985   6.192,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.686.766     626                                                                   16.777.215   6.244,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     629                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     630                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.737     632  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.447     634                                                                    8.294.400   6.392,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.342.855     638                                                                    8.294.400   6.176,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.309.287     639                                                                    8.105.985   6.191,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.686.222     642                                                                   16.777.215   6.245,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     645                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     646                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.289     648  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.031     652                                                                    8.294.400   6.394,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.341.895     656                                                                    8.294.400   6.181,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.309.479     657                                                                    8.105.985   6.190,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.686.287     660                                                                   16.777.215   6.245,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     663                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     664                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.448     666  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.414     668                                                                    8.294.400   6.393,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.340.519     672                                                                    8.294.400   6.187,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.309.223     673                                                                    8.105.985   6.191,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.686.030     676                                                                   16.777.215   6.246,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     679                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     680                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.480     682  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.296.743     686                                                                    8.294.400   6.396,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.342.215     690                                                                    8.294.400   6.179,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.308.711     691                                                                    8.105.985   6.193,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.687.150     694                                                                   16.777.215   6.243,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     697                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     698                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.000     700  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.447     702                                                                    8.294.400   6.392,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+   1,000000       1.342.119     706                                                                    8.294.400   6.180,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       1.309.606     707                                                                    8.105.985   6.189,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000       2.687.470     710                                                                   16.777.215   6.242,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.144     713                                                                           40      18,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000           2.112     714                                                                            1       0,000  Pinned    Device    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy HtoD]
+   1,000000          64.448     716  65.535     1     1    64     1     1       32        0        0                                              NVIDIA GeForce RTX 3080 (0)    1    13  kmeans_237_gpu    
+   1,000000       1.297.063     720                                                                    8.294.400   6.394,000  Device    Pinned    NVIDIA GeForce RTX 3080 (0)    1    13  [CUDA memcpy DtoH]
+Report file moved to "/home/alumnos/ppia/ppia-12/Escritorio/kmeans-parallel/report1.qdrep"
+Report file moved to "/home/alumnos/ppia/ppia-12/Escritorio/kmeans-parallel/report1.sqlite"
+
+
