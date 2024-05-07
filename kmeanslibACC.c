@@ -194,8 +194,8 @@ uint8_t find_closest_centroid(rgb* p, cluster* centroids, uint8_t num_clusters){
  * input @param: pixels 	--> pinter to array of rgb (pixels)
  */
 void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){	
-	uint8_t condition, changed, move[num_pixels]; 
-	uint32_t i, j, random_num, vr[k], vg[k], vb[k], vp[k]; // Initialize four helper vectors to parallelize the code		
+	uint8_t condition, changed, closest, move[num_pixels];
+	uint32_t i, j, random_num, vr[k], vg[k], vb[k], vp[k];
 	
 	printf("STEP 1: K = %d\n", k);
 	k = MIN(k, num_pixels);
@@ -207,69 +207,74 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 		random_num = rand() % num_pixels;
 		centroides[i].r = pixels[random_num].r;
 		centroides[i].g = pixels[random_num].g;
-		centroides[i].b = pixels[random_num].b;				
+		centroides[i].b = pixels[random_num].b;
 	}
 
 	// K-means iterative procedures start
 	printf("STEP 3: Updating centroids\n\n");
 	i = 0;
 	do 
-  	{				
-		// Reset centroids		
+  	{
+		// Reset centroids
 		for(j = 0; j < k; j++) 
     	{
 			centroides[j].media_r = 0;
 			centroides[j].media_g = 0;
 			centroides[j].media_b = 0;
-			centroides[j].num_puntos = 0;	
+			centroides[j].num_puntos = 0;
 			// Reset also the values of the helper vectors
 			vr[j] = 0;
 			vg[j] = 0;		
 			vb[j] = 0;		
-			vp[j] = 0;				
-		}	
-
+			vp[j] = 0;	
+		}
+		
 		// Find closest cluster for each pixel
 		// Inside we have the find closest centroids 
-		#pragma acc data copy(move[:num_pixels]) copyin(pixels[:num_pixels], centroides[:k], k)
-		{
+		#pragma acc data copyin(pixels, centroides, k) copyout(closest){
 		#pragma acc parallel loop num_gangs(num_pixels/64) vector_length(64)		
 		for(j = 0; j < num_pixels; j++) 
     	{
 			// rgb* p = &pixels[j];
+			uint8_t p_b = &pixels[j].b;
+			uint8_t p_g = &pixels[j].g;
+			uint8_t p_r = &pixels[j].r;
 			uint32_t min = UINT32_MAX;
-			uint32_t dis;
-			uint8_t j;
+			uint32_t dis[k];
+			uint8_t closest = 0, j;
 			int16_t diffR, diffG, diffB;	
 
 			// Iterate through num_pixels
 			for(int l = 0; l < k; l++) 
 			{
-				diffR = centroides[l].r - pixels[j].r;
-				diffG = centroides[l].g - pixels[j].g;
-				diffB = centroides[l].b - pixels[j].b; 
+				diffR = centroides[l].r - p_r;
+				diffG = centroides[l].g - p_g;
+				diffB = centroides[l].b - p_b; 
 				// No sqrt required.
-				dis = diffR*diffR + diffG*diffG + diffB*diffB;
+				dis[l] = diffR*diffR + diffG*diffG + diffB*diffB;
 				
-				if(dis < min) 
+				if(dis[l] < min) 
 				{
-					min = dis;
-					move[j] = l;
+					min = dis[l];
+					closest = l;
 				}
 			}
+			move[j] = closest;
 		}
 		}
-
-		for (j = 0; j < num_pixels; j++) 
-    	{
+   
+		// Find closest cluster for each pixel
+		#pragma omp parallel for private(closest) reduction(+: vr[:k], vg[:k], vb[:k], vp[:k]) // Parallelizing the for with a reduction
+		for(j = 0; j < num_pixels; j++)
+    	{			
 			vr[move[j]] += pixels[j].r;			
 			vg[move[j]] += pixels[j].g;
 			vb[move[j]] += pixels[j].b;
-			vp[move[j]]++;						
+			vp[move[j]]++;			
 		}
 
 		// Assign the obtained values to the centroides variable
-		for(int j = 0; j < k; j++)
+		for(j = 0; j < k; j++)
 		{
 			centroides[j].media_r = vr[j];
 			centroides[j].media_g = vg[j];
@@ -279,7 +284,7 @@ void kmeans(uint8_t k, cluster* centroides, uint32_t num_pixels, rgb* pixels){
 
 		// Update centroids & check stop condition
 		condition = 0;
-		for(int j = 0; j < k; j++) 
+		for(j = 0; j < k; j++) 
 		{
 			if(centroides[j].num_puntos == 0) 
 			{
