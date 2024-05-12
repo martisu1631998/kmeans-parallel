@@ -1,9 +1,19 @@
 kmeanslib.c:
+read_file:
+     63, Loop not vectorized/parallelized: potential early exits
+write_file:
+    106, Loop not vectorized/parallelized: potential early exits
+    129, Loop not vectorized/parallelized: contains call
+getChecksum:
+    149, Loop not vectorized/parallelized: contains call
+find_closest_centroid:
+    172, Loop not vectorized: data dependency
+kmeans:
+    205, Loop not vectorized/parallelized: contains call
+    219, Loop unrolled 8 times
+    228, Loop not vectorized/parallelized: contains call
 kmeans.c:
 NEW EXECUTION, DIFFERENT K, SEQUENTIAL
-WARNING: executable and any of its children processes will be profiled.
-
-Collecting data...
 TEST = 1
 
 WIDTH : 3840
@@ -19,25 +29,9 @@ Number of K-Means iterations: 9
 Centroide 0 : R[68]	G[56]	B[45]
 Centroide 1 : R[196]	G[186]	B[171]
 
-Time to Kmeans is 1 seconds and 723146 microseconds
+Time to Kmeans is 1 seconds and 571342 microseconds
 Checksum value = 6405336
-Processing events...
-Saving temporary "/tmp/nsys-report-8218-bc13-9b81-c494.qdstrm" file to disk...
-
-Creating final output files...
-Processing [0%                                                                ]Processing [1%                                                                ]Processing [3%                                                                ]Processing [==============================50%                                 ]Processing [============================================================96%   ]Processing [=============================================================97%  ]Processing [=============================================================98%  ]Processing [==============================================================99% ]Processing [==============================================================100%]Processing [==============================================================100%]
-Saved report file to "/tmp/nsys-report-8218-bc13-9b81-c494.qdrep"
-Exporting 383 events: [1%                                                     ]Exporting 383 events: [2%                                                     ]Exporting 383 events: [3%                                                     ]Exporting 383 events: [4%                                                     ]Exporting 383 events: [5%                                                     ]Exporting 383 events: [=6%                                                    ]Exporting 383 events: [=7%                                                    ]Exporting 383 events: [==8%                                                   ]Exporting 383 events: [==9%                                                   ]Exporting 383 events: [==10%                                                  ]Exporting 383 events: [===11%                                                 ]Exporting 383 events: [===12%                                                 ]Exporting 383 events: [====13%                                                ]Exporting 383 events: [====14%                                                ]Exporting 383 events: [=====15%                                               ]Exporting 383 events: [=====16%                                               ]Exporting 383 events: [======17%                                              ]Exporting 383 events: [======18%                                              ]Exporting 383 events: [=======19%                                             ]Exporting 383 events: [========20%                                            ]Exporting 383 events: [========21%                                            ]Exporting 383 events: [=========22%                                           ]Exporting 383 events: [=========23%                                           ]Exporting 383 events: [==========24%                                          ]Exporting 383 events: [==========25%                                          ]Exporting 383 events: [===========26%                                         ]Exporting 383 events: [===========27%                                         ]Exporting 383 events: [============28%                                        ]Exporting 383 events: [============29%                                        ]Exporting 383 events: [=============30%                                       ]Exporting 383 events: [==============31%                                      ]Exporting 383 events: [==============32%                                      ]Exporting 383 events: [===============33%                                     ]Exporting 383 events: [===============34%                                     ]Exporting 383 events: [================35%                                    ]Exporting 383 events: [================36%                                    ]Exporting 383 events: [=================37%                                   ]Exporting 383 events: [=================38%                                   ]Exporting 383 events: [==================39%                                  ]Exporting 383 events: [===================40%                                 ]Exporting 383 events: [===================41%                                 ]Exporting 383 events: [====================42%                                ]Exporting 383 events: [====================43%                                ]Exporting 383 events: [=====================44%                               ]Exporting 383 events: [=====================45%                               ]Exporting 383 events: [======================46%                              ]Exporting 383 events: [======================47%                              ]Exporting 383 events: [=======================48%                             ]Exporting 383 events: [=======================49%                             ]Exporting 383 events: [========================50%                            ]Exporting 383 events: [=========================51%                           ]Exporting 383 events: [=========================52%                           ]Exporting 383 events: [==========================53%                          ]Exporting 383 events: [==========================54%                          ]Exporting 383 events: [===========================55%                         ]Exporting 383 events: [===========================56%                         ]Exporting 383 events: [============================57%                        ]Exporting 383 events: [============================58%                        ]Exporting 383 events: [=============================59%                       ]Exporting 383 events: [==============================60%                      ]Exporting 383 events: [==============================61%                      ]Exporting 383 events: [===============================62%                     ]Exporting 383 events: [===============================63%                     ]Exporting 383 events: [================================64%                    ]Exporting 383 events: [================================65%                    ]Exporting 383 events: [=================================66%                   ]Exporting 383 events: [=================================67%                   ]Exporting 383 events: [==================================68%                  ]Exporting 383 events: [==================================69%                  ]Exporting 383 events: [===================================70%                 ]Exporting 383 events: [====================================71%                ]Exporting 383 events: [====================================72%                ]Exporting 383 events: [=====================================73%               ]Exporting 383 events: [=====================================74%               ]Exporting 383 events: [======================================75%              ]Exporting 383 events: [======================================76%              ]Exporting 383 events: [=======================================77%             ]Exporting 383 events: [=======================================78%             ]Exporting 383 events: [========================================79%            ]Exporting 383 events: [=========================================80%           ]Exporting 383 events: [=========================================81%           ]Exporting 383 events: [==========================================82%          ]Exporting 383 events: [==========================================83%          ]Exporting 383 events: [===========================================84%         ]Exporting 383 events: [===========================================85%         ]Exporting 383 events: [============================================86%        ]Exporting 383 events: [============================================87%        ]Exporting 383 events: [=============================================88%       ]Exporting 383 events: [=============================================89%       ]Exporting 383 events: [==============================================90%      ]Exporting 383 events: [===============================================91%     ]Exporting 383 events: [===============================================92%     ]Exporting 383 events: [================================================93%    ]Exporting 383 events: [================================================94%    ]Exporting 383 events: [=================================================95%   ]Exporting 383 events: [=================================================96%   ]Exporting 383 events: [==================================================97%  ]Exporting 383 events: [==================================================98%  ]Exporting 383 events: [===================================================99% ]Exporting 383 events: [===================================================100%]
-
-Exported successfully to
-/tmp/nsys-report-8218-bc13-9b81-c494.sqlite
-Report file moved to "/home/alumnos/ppia/ppia-11/Pràctiques/KMeans/kmeans-parallel/report1.qdrep"
-Report file moved to "/home/alumnos/ppia/ppia-11/Pràctiques/KMeans/kmeans-parallel/report1.sqlite"
-
 NEW EXECUTION, DIFFERENT K, SEQUENTIAL
-WARNING: executable and any of its children processes will be profiled.
-
-Collecting data...
 TEST = 1
 
 WIDTH : 3840
@@ -55,25 +49,9 @@ Centroide 1 : R[160]	G[144]	B[123]
 Centroide 2 : R[218]	G[213]	B[201]
 Centroide 3 : R[97]	G[81]	B[63]
 
-Time to Kmeans is 6 seconds and 621226 microseconds
+Time to Kmeans is 3 seconds and 378812 microseconds
 Checksum value = 12689895
-Processing events...
-Saving temporary "/tmp/nsys-report-830b-b707-e5c2-d986.qdstrm" file to disk...
-
-Creating final output files...
-Processing [0%                                                                ]Processing [1%                                                                ]Processing [3%                                                                ]Processing [========================42%                                       ]Processing [==================================================81%             ]Processing [===================================================83%            ]Processing [====================================================84%           ]Processing [=====================================================86%          ]Processing [======================================================87%         ]Processing [=======================================================89%        ]Processing [========================================================90%       ]Processing [=========================================================92%      ]Processing [==========================================================93%     ]Processing [===========================================================95%    ]Processing [============================================================96%   ]Processing [=============================================================98%  ]Processing [==============================================================100%]Processing [==============================================================100%]
-Saved report file to "/tmp/nsys-report-830b-b707-e5c2-d986.qdrep"
-Exporting 383 events: [1%                                                     ]Exporting 383 events: [2%                                                     ]Exporting 383 events: [3%                                                     ]Exporting 383 events: [4%                                                     ]Exporting 383 events: [5%                                                     ]Exporting 383 events: [=6%                                                    ]Exporting 383 events: [=7%                                                    ]Exporting 383 events: [==8%                                                   ]Exporting 383 events: [==9%                                                   ]Exporting 383 events: [==10%                                                  ]Exporting 383 events: [===11%                                                 ]Exporting 383 events: [===12%                                                 ]Exporting 383 events: [====13%                                                ]Exporting 383 events: [====14%                                                ]Exporting 383 events: [=====15%                                               ]Exporting 383 events: [=====16%                                               ]Exporting 383 events: [======17%                                              ]Exporting 383 events: [======18%                                              ]Exporting 383 events: [=======19%                                             ]Exporting 383 events: [========20%                                            ]Exporting 383 events: [========21%                                            ]Exporting 383 events: [=========22%                                           ]Exporting 383 events: [=========23%                                           ]Exporting 383 events: [==========24%                                          ]Exporting 383 events: [==========25%                                          ]Exporting 383 events: [===========26%                                         ]Exporting 383 events: [===========27%                                         ]Exporting 383 events: [============28%                                        ]Exporting 383 events: [============29%                                        ]Exporting 383 events: [=============30%                                       ]Exporting 383 events: [==============31%                                      ]Exporting 383 events: [==============32%                                      ]Exporting 383 events: [===============33%                                     ]Exporting 383 events: [===============34%                                     ]Exporting 383 events: [================35%                                    ]Exporting 383 events: [================36%                                    ]Exporting 383 events: [=================37%                                   ]Exporting 383 events: [=================38%                                   ]Exporting 383 events: [==================39%                                  ]Exporting 383 events: [===================40%                                 ]Exporting 383 events: [===================41%                                 ]Exporting 383 events: [====================42%                                ]Exporting 383 events: [====================43%                                ]Exporting 383 events: [=====================44%                               ]Exporting 383 events: [=====================45%                               ]Exporting 383 events: [======================46%                              ]Exporting 383 events: [======================47%                              ]Exporting 383 events: [=======================48%                             ]Exporting 383 events: [=======================49%                             ]Exporting 383 events: [========================50%                            ]Exporting 383 events: [=========================51%                           ]Exporting 383 events: [=========================52%                           ]Exporting 383 events: [==========================53%                          ]Exporting 383 events: [==========================54%                          ]Exporting 383 events: [===========================55%                         ]Exporting 383 events: [===========================56%                         ]Exporting 383 events: [============================57%                        ]Exporting 383 events: [============================58%                        ]Exporting 383 events: [=============================59%                       ]Exporting 383 events: [==============================60%                      ]Exporting 383 events: [==============================61%                      ]Exporting 383 events: [===============================62%                     ]Exporting 383 events: [===============================63%                     ]Exporting 383 events: [================================64%                    ]Exporting 383 events: [================================65%                    ]Exporting 383 events: [=================================66%                   ]Exporting 383 events: [=================================67%                   ]Exporting 383 events: [==================================68%                  ]Exporting 383 events: [==================================69%                  ]Exporting 383 events: [===================================70%                 ]Exporting 383 events: [====================================71%                ]Exporting 383 events: [====================================72%                ]Exporting 383 events: [=====================================73%               ]Exporting 383 events: [=====================================74%               ]Exporting 383 events: [======================================75%              ]Exporting 383 events: [======================================76%              ]Exporting 383 events: [=======================================77%             ]Exporting 383 events: [=======================================78%             ]Exporting 383 events: [========================================79%            ]Exporting 383 events: [=========================================80%           ]Exporting 383 events: [=========================================81%           ]Exporting 383 events: [==========================================82%          ]Exporting 383 events: [==========================================83%          ]Exporting 383 events: [===========================================84%         ]Exporting 383 events: [===========================================85%         ]Exporting 383 events: [============================================86%        ]Exporting 383 events: [============================================87%        ]Exporting 383 events: [=============================================88%       ]Exporting 383 events: [=============================================89%       ]Exporting 383 events: [==============================================90%      ]Exporting 383 events: [===============================================91%     ]Exporting 383 events: [===============================================92%     ]Exporting 383 events: [================================================93%    ]Exporting 383 events: [================================================94%    ]Exporting 383 events: [=================================================95%   ]Exporting 383 events: [=================================================96%   ]Exporting 383 events: [==================================================97%  ]Exporting 383 events: [==================================================98%  ]Exporting 383 events: [===================================================99% ]Exporting 383 events: [===================================================100%]
-
-Exported successfully to
-/tmp/nsys-report-830b-b707-e5c2-d986.sqlite
-Report file moved to "/home/alumnos/ppia/ppia-11/Pràctiques/KMeans/kmeans-parallel/report1.qdrep"
-Report file moved to "/home/alumnos/ppia/ppia-11/Pràctiques/KMeans/kmeans-parallel/report1.sqlite"
-
 NEW EXECUTION, DIFFERENT K, SEQUENTIAL
-WARNING: executable and any of its children processes will be profiled.
-
-Collecting data...
 TEST = 1
 
 WIDTH : 3840
@@ -95,45 +73,166 @@ Centroide 5 : R[26]	G[19]	B[15]
 Centroide 6 : R[229]	G[226]	B[216]
 Centroide 7 : R[154]	G[142]	B[126]
 
-Time to Kmeans is 25 seconds and 479925 microseconds
+Time to Kmeans is 12 seconds and 720662 microseconds
 Checksum value = 22329779
-Processing events...
-Saving temporary "/tmp/nsys-report-b53e-e81b-0e01-d182.qdstrm" file to disk...
-
-Creating final output files...
-Processing [0%                                                                ]Processing [1%                                                                ]Processing [==============26%                                                 ]Processing [==============================51%                                 ]Processing [===============================52%                                ]Processing [===============================53%                                ]Processing [================================54%                               ]Processing [=================================55%                              ]Processing [=================================56%                              ]Processing [==================================57%                             ]Processing [===================================58%                            ]Processing [===================================59%                            ]Processing [====================================60%                           ]Processing [=====================================61%                          ]Processing [=====================================62%                          ]Processing [======================================63%                         ]Processing [=======================================64%                        ]Processing [=======================================65%                        ]Processing [========================================66%                       ]Processing [=========================================67%                      ]Processing [=========================================68%                      ]Processing [==========================================69%                     ]Processing [===========================================70%                    ]Processing [===========================================71%                    ]Processing [============================================72%                   ]Processing [=============================================73%                  ]Processing [=============================================74%                  ]Processing [==============================================75%                 ]Processing [===============================================76%                ]Processing [===============================================77%                ]Processing [================================================78%               ]Processing [=================================================79%              ]Processing [=================================================80%              ]Processing [==================================================81%             ]Processing [===================================================82%            ]Processing [===================================================83%            ]Processing [====================================================84%           ]Processing [=====================================================85%          ]Processing [======================================================87%         ]Processing [=======================================================88%        ]Processing [=======================================================89%        ]Processing [========================================================90%       ]Processing [=========================================================91%      ]Processing [=========================================================92%      ]Processing [==========================================================93%     ]Processing [===========================================================94%    ]Processing [===========================================================95%    ]Processing [============================================================96%   ]Processing [=============================================================97%  ]Processing [=============================================================98%  ]Processing [==============================================================100%]Processing [==============================================================100%]
-Saved report file to "/tmp/nsys-report-b53e-e81b-0e01-d182.qdrep"
-Exporting 383 events: [1%                                                     ]Exporting 383 events: [2%                                                     ]Exporting 383 events: [3%                                                     ]Exporting 383 events: [4%                                                     ]Exporting 383 events: [5%                                                     ]Exporting 383 events: [=6%                                                    ]Exporting 383 events: [=7%                                                    ]Exporting 383 events: [==8%                                                   ]Exporting 383 events: [==9%                                                   ]Exporting 383 events: [==10%                                                  ]Exporting 383 events: [===11%                                                 ]Exporting 383 events: [===12%                                                 ]Exporting 383 events: [====13%                                                ]Exporting 383 events: [====14%                                                ]Exporting 383 events: [=====15%                                               ]Exporting 383 events: [=====16%                                               ]Exporting 383 events: [======17%                                              ]Exporting 383 events: [======18%                                              ]Exporting 383 events: [=======19%                                             ]Exporting 383 events: [========20%                                            ]Exporting 383 events: [========21%                                            ]Exporting 383 events: [=========22%                                           ]Exporting 383 events: [=========23%                                           ]Exporting 383 events: [==========24%                                          ]Exporting 383 events: [==========25%                                          ]Exporting 383 events: [===========26%                                         ]Exporting 383 events: [===========27%                                         ]Exporting 383 events: [============28%                                        ]Exporting 383 events: [============29%                                        ]Exporting 383 events: [=============30%                                       ]Exporting 383 events: [==============31%                                      ]Exporting 383 events: [==============32%                                      ]Exporting 383 events: [===============33%                                     ]Exporting 383 events: [===============34%                                     ]Exporting 383 events: [================35%                                    ]Exporting 383 events: [================36%                                    ]Exporting 383 events: [=================37%                                   ]Exporting 383 events: [=================38%                                   ]Exporting 383 events: [==================39%                                  ]Exporting 383 events: [===================40%                                 ]Exporting 383 events: [===================41%                                 ]Exporting 383 events: [====================42%                                ]Exporting 383 events: [====================43%                                ]Exporting 383 events: [=====================44%                               ]Exporting 383 events: [=====================45%                               ]Exporting 383 events: [======================46%                              ]Exporting 383 events: [======================47%                              ]Exporting 383 events: [=======================48%                             ]Exporting 383 events: [=======================49%                             ]Exporting 383 events: [========================50%                            ]Exporting 383 events: [=========================51%                           ]Exporting 383 events: [=========================52%                           ]Exporting 383 events: [==========================53%                          ]Exporting 383 events: [==========================54%                          ]Exporting 383 events: [===========================55%                         ]Exporting 383 events: [===========================56%                         ]Exporting 383 events: [============================57%                        ]Exporting 383 events: [============================58%                        ]Exporting 383 events: [=============================59%                       ]Exporting 383 events: [==============================60%                      ]Exporting 383 events: [==============================61%                      ]Exporting 383 events: [===============================62%                     ]Exporting 383 events: [===============================63%                     ]Exporting 383 events: [================================64%                    ]Exporting 383 events: [================================65%                    ]Exporting 383 events: [=================================66%                   ]Exporting 383 events: [=================================67%                   ]Exporting 383 events: [==================================68%                  ]Exporting 383 events: [==================================69%                  ]Exporting 383 events: [===================================70%                 ]Exporting 383 events: [====================================71%                ]Exporting 383 events: [====================================72%                ]Exporting 383 events: [=====================================73%               ]Exporting 383 events: [=====================================74%               ]Exporting 383 events: [======================================75%              ]Exporting 383 events: [======================================76%              ]Exporting 383 events: [=======================================77%             ]Exporting 383 events: [=======================================78%             ]Exporting 383 events: [========================================79%            ]Exporting 383 events: [=========================================80%           ]Exporting 383 events: [=========================================81%           ]Exporting 383 events: [==========================================82%          ]Exporting 383 events: [==========================================83%          ]Exporting 383 events: [===========================================84%         ]Exporting 383 events: [===========================================85%         ]Exporting 383 events: [============================================86%        ]Exporting 383 events: [============================================87%        ]Exporting 383 events: [=============================================88%       ]Exporting 383 events: [=============================================89%       ]Exporting 383 events: [==============================================90%      ]Exporting 383 events: [===============================================91%     ]Exporting 383 events: [===============================================92%     ]Exporting 383 events: [================================================93%    ]Exporting 383 events: [================================================94%    ]Exporting 383 events: [=================================================95%   ]Exporting 383 events: [=================================================96%   ]Exporting 383 events: [==================================================97%  ]Exporting 383 events: [==================================================98%  ]Exporting 383 events: [===================================================99% ]Exporting 383 events: [===================================================100%]
-
-Exported successfully to
-/tmp/nsys-report-b53e-e81b-0e01-d182.sqlite
-Report file moved to "/home/alumnos/ppia/ppia-11/Pràctiques/KMeans/kmeans-parallel/report1.qdrep"
-Report file moved to "/home/alumnos/ppia/ppia-11/Pràctiques/KMeans/kmeans-parallel/report1.sqlite"
-
 NEW EXECUTION, DIFFERENT K, SEQUENTIAL
-WARNING: executable and any of its children processes will be profiled.
-
-Collecting data...
 TEST = 1
 
 WIDTH : 3840
 HEIGHT: 2160
 LENGHT: 8294400
 
-slurmstepd: error: *** JOB 26821 ON aolin-gpu-1 CANCELLED AT 2024-05-12T13:56:20 ***
-Signal 15 (SIGTERM) was forwarded to the target application process group 20604
+STEP 1: K = 16
+STEP 2: Init centroids
+STEP 3: Updating centroids
 
-The target application terminated with signal 15 (SIGTERM)
-Processing events...
-Saving temporary "/tmp/nsys-report-c886-80a3-c72d-3c19.qdstrm" file to disk...
+Number of K-Means iterations: 47
 
-Creating final output files...
-Processing [0%                                                                ]Processing [1%                                                                ]Processing [3%                                                                ]Processing [==============================51%                                 ]Processing [=============================================================98%  ]Processing [==============================================================99% ]Processing [==============================================================100%]Processing [==============================================================100%]
-Saved report file to "/tmp/nsys-report-c886-80a3-c72d-3c19.qdrep"
-Exporting 383 events: [1%                                                     ]Exporting 383 events: [2%                                                     ]Exporting 383 events: [3%                                                     ]Exporting 383 events: [4%                                                     ]Exporting 383 events: [5%                                                     ]Exporting 383 events: [=6%                                                    ]Exporting 383 events: [=7%                                                    ]Exporting 383 events: [==8%                                                   ]Exporting 383 events: [==9%                                                   ]Exporting 383 events: [==10%                                                  ]Exporting 383 events: [===11%                                                 ]Exporting 383 events: [===12%                                                 ]Exporting 383 events: [====13%                                                ]Exporting 383 events: [====14%                                                ]Exporting 383 events: [=====15%                                               ]Exporting 383 events: [=====16%                                               ]Exporting 383 events: [======17%                                              ]Exporting 383 events: [======18%                                              ]Exporting 383 events: [=======19%                                             ]Exporting 383 events: [========20%                                            ]Exporting 383 events: [========21%                                            ]Exporting 383 events: [=========22%                                           ]Exporting 383 events: [=========23%                                           ]Exporting 383 events: [==========24%                                          ]Exporting 383 events: [==========25%                                          ]Exporting 383 events: [===========26%                                         ]Exporting 383 events: [===========27%                                         ]Exporting 383 events: [============28%                                        ]Exporting 383 events: [============29%                                        ]Exporting 383 events: [=============30%                                       ]Exporting 383 events: [==============31%                                      ]Exporting 383 events: [==============32%                                      ]Exporting 383 events: [===============33%                                     ]Exporting 383 events: [===============34%                                     ]Exporting 383 events: [================35%                                    ]Exporting 383 events: [================36%                                    ]Exporting 383 events: [=================37%                                   ]Exporting 383 events: [=================38%                                   ]Exporting 383 events: [==================39%                                  ]Exporting 383 events: [===================40%                                 ]Exporting 383 events: [===================41%                                 ]Exporting 383 events: [====================42%                                ]Exporting 383 events: [====================43%                                ]Exporting 383 events: [=====================44%                               ]Exporting 383 events: [=====================45%                               ]Exporting 383 events: [======================46%                              ]Exporting 383 events: [======================47%                              ]Exporting 383 events: [=======================48%                             ]Exporting 383 events: [=======================49%                             ]Exporting 383 events: [========================50%                            ]Exporting 383 events: [=========================51%                           ]Exporting 383 events: [=========================52%                           ]Exporting 383 events: [==========================53%                          ]Exporting 383 events: [==========================54%                          ]Exporting 383 events: [===========================55%                         ]Exporting 383 events: [===========================56%                         ]Exporting 383 events: [============================57%                        ]Exporting 383 events: [============================58%                        ]Exporting 383 events: [=============================59%                       ]Exporting 383 events: [==============================60%                      ]Exporting 383 events: [==============================61%                      ]Exporting 383 events: [===============================62%                     ]Exporting 383 events: [===============================63%                     ]Exporting 383 events: [================================64%                    ]Exporting 383 events: [================================65%                    ]Exporting 383 events: [=================================66%                   ]Exporting 383 events: [=================================67%                   ]Exporting 383 events: [==================================68%                  ]Exporting 383 events: [==================================69%                  ]Exporting 383 events: [===================================70%                 ]Exporting 383 events: [====================================71%                ]Exporting 383 events: [====================================72%                ]Exporting 383 events: [=====================================73%               ]Exporting 383 events: [=====================================74%               ]Exporting 383 events: [======================================75%              ]Exporting 383 events: [======================================76%              ]Exporting 383 events: [=======================================77%             ]Exporting 383 events: [=======================================78%             ]Exporting 383 events: [========================================79%            ]Exporting 383 events: [=========================================80%           ]Exporting 383 events: [=========================================81%           ]Exporting 383 events: [==========================================82%          ]Exporting 383 events: [==========================================83%          ]Exporting 383 events: [===========================================84%         ]Exporting 383 events: [===========================================85%         ]Exporting 383 events: [============================================86%        ]Exporting 383 events: [============================================87%        ]Exporting 383 events: [=============================================88%       ]Exporting 383 events: [=============================================89%       ]Exporting 383 events: [==============================================90%      ]Exporting 383 events: [===============================================91%     ]Exporting 383 events: [===============================================92%     ]Exporting 383 events: [================================================93%    ]Exporting 383 events: [================================================94%    ]Exporting 383 events: [=================================================95%   ]Exporting 383 events: [=================================================96%   ]Exporting 383 events: [==================================================97%  ]Exporting 383 events: [==================================================98%  ]Exporting 383 events: [===================================================99% ]Exporting 383 events: [===================================================100%]
+Centroide 0 : R[34]	G[28]	B[23]
+Centroide 1 : R[82]	G[47]	B[29]
+Centroide 2 : R[171]	G[171]	B[165]
+Centroide 3 : R[13]	G[77]	B[99]
+Centroide 4 : R[116]	G[77]	B[48]
+Centroide 5 : R[20]	G[13]	B[10]
+Centroide 6 : R[208]	G[207]	B[198]
+Centroide 7 : R[140]	G[135]	B[125]
+Centroide 8 : R[147]	G[111]	B[74]
+Centroide 9 : R[193]	G[107]	B[41]
+Centroide 10 : R[225]	G[194]	B[151]
+Centroide 11 : R[104]	G[102]	B[92]
+Centroide 12 : R[50]	G[46]	B[39]
+Centroide 13 : R[240]	G[237]	B[228]
+Centroide 14 : R[73]	G[71]	B[63]
+Centroide 15 : R[193]	G[151]	B[109]
 
-Exported successfully to
-/tmp/nsys-report-c886-80a3-c72d-3c19.sqlite
-Report file moved to "/home/alumnos/ppia/ppia-11/Pràctiques/KMeans/kmeans-parallel/report1.qdrep"
-Report file moved to "/home/alumnos/ppia/ppia-11/Pràctiques/KMeans/kmeans-parallel/report1.sqlite"
+Time to Kmeans is 21 seconds and 590638 microseconds
+Checksum value = 42559141
+NEW EXECUTION, DIFFERENT K, SEQUENTIAL
+TEST = 1
 
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 32
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 49
+
+Centroide 0 : R[23]	G[20]	B[17]
+Centroide 1 : R[77]	G[30]	B[14]
+Centroide 2 : R[196]	G[194]	B[185]
+Centroide 3 : R[29]	G[37]	B[36]
+Centroide 4 : R[130]	G[54]	B[23]
+Centroide 5 : R[13]	G[10]	B[8]
+Centroide 6 : R[156]	G[199]	B[210]
+Centroide 7 : R[156]	G[146]	B[134]
+Centroide 8 : R[133]	G[126]	B[114]
+Centroide 9 : R[194]	G[101]	B[34]
+Centroide 10 : R[174]	G[169]	B[161]
+Centroide 11 : R[102]	G[107]	B[102]
+Centroide 12 : R[39]	G[28]	B[19]
+Centroide 13 : R[220]	G[216]	B[206]
+Centroide 14 : R[68]	G[69]	B[63]
+Centroide 15 : R[224]	G[175]	B[74]
+Centroide 16 : R[125]	G[86]	B[54]
+Centroide 17 : R[205]	G[164]	B[130]
+Centroide 18 : R[120]	G[155]	B[161]
+Centroide 19 : R[152]	G[109]	B[67]
+Centroide 20 : R[8]	G[52]	B[85]
+Centroide 21 : R[178]	G[132]	B[95]
+Centroide 22 : R[98]	G[69]	B[46]
+Centroide 23 : R[24]	G[119]	B[121]
+Centroide 24 : R[77]	G[53]	B[36]
+Centroide 25 : R[244]	G[241]	B[234]
+Centroide 26 : R[121]	G[105]	B[84]
+Centroide 27 : R[54]	G[40]	B[28]
+Centroide 28 : R[89]	G[87]	B[78]
+Centroide 29 : R[52]	G[52]	B[47]
+Centroide 30 : R[231]	G[202]	B[160]
+Centroide 31 : R[35]	G[9]	B[6]
+
+Time to Kmeans is 42 seconds and 187158 microseconds
+Checksum value = 73490886
+NEW EXECUTION, DIFFERENT K, SEQUENTIAL
+TEST = 1
+
+WIDTH : 3840
+HEIGHT: 2160
+LENGHT: 8294400
+
+STEP 1: K = 64
+STEP 2: Init centroids
+STEP 3: Updating centroids
+
+Number of K-Means iterations: 196
+
+Centroide 0 : R[12]	G[34]	B[36]
+Centroide 1 : R[54]	G[37]	B[26]
+Centroide 2 : R[155]	G[173]	B[188]
+Centroide 3 : R[27]	G[25]	B[24]
+Centroide 4 : R[117]	G[61]	B[22]
+Centroide 5 : R[6]	G[6]	B[4]
+Centroide 6 : R[173]	G[215]	B[223]
+Centroide 7 : R[101]	G[95]	B[86]
+Centroide 8 : R[125]	G[102]	B[70]
+Centroide 9 : R[165]	G[79]	B[27]
+Centroide 10 : R[127]	G[124]	B[115]
+Centroide 11 : R[57]	G[61]	B[57]
+Centroide 12 : R[31]	G[19]	B[13]
+Centroide 13 : R[163]	G[155]	B[144]
+Centroide 14 : R[67]	G[48]	B[34]
+Centroide 15 : R[213]	G[120]	B[33]
+Centroide 16 : R[98]	G[80]	B[66]
+Centroide 17 : R[177]	G[144]	B[111]
+Centroide 18 : R[124]	G[144]	B[150]
+Centroide 19 : R[103]	G[69]	B[46]
+Centroide 20 : R[17]	G[66]	B[53]
+Centroide 21 : R[156]	G[140]	B[63]
+Centroide 22 : R[51]	G[49]	B[44]
+Centroide 23 : R[33]	G[149]	B[137]
+Centroide 24 : R[87]	G[102]	B[45]
+Centroide 25 : R[219]	G[188]	B[160]
+Centroide 26 : R[71]	G[73]	B[67]
+Centroide 27 : R[35]	G[32]	B[30]
+Centroide 28 : R[77]	G[62]	B[51]
+Centroide 29 : R[23]	G[103]	B[92]
+Centroide 30 : R[238]	G[206]	B[134]
+Centroide 31 : R[31]	G[6]	B[4]
+Centroide 32 : R[21]	G[18]	B[18]
+Centroide 33 : R[206]	G[163]	B[128]
+Centroide 34 : R[24]	G[28]	B[5]
+Centroide 35 : R[118]	G[109]	B[97]
+Centroide 36 : R[225]	G[179]	B[75]
+Centroide 37 : R[195]	G[194]	B[185]
+Centroide 38 : R[214]	G[211]	B[203]
+Centroide 39 : R[247]	G[246]	B[240]
+Centroide 40 : R[45]	G[50]	B[13]
+Centroide 41 : R[15]	G[6]	B[4]
+Centroide 42 : R[86]	G[58]	B[35]
+Centroide 43 : R[232]	G[227]	B[217]
+Centroide 44 : R[7]	G[66]	B[125]
+Centroide 45 : R[95]	G[111]	B[108]
+Centroide 46 : R[10]	G[13]	B[11]
+Centroide 47 : R[149]	G[120]	B[94]
+Centroide 48 : R[89]	G[39]	B[23]
+Centroide 49 : R[179]	G[173]	B[162]
+Centroide 50 : R[49]	G[13]	B[7]
+Centroide 51 : R[6]	G[38]	B[83]
+Centroide 52 : R[147]	G[138]	B[126]
+Centroide 53 : R[240]	G[219]	B[181]
+Centroide 54 : R[42]	G[28]	B[19]
+Centroide 55 : R[126]	G[83]	B[51]
+Centroide 56 : R[94]	G[206]	B[197]
+Centroide 57 : R[153]	G[101]	B[64]
+Centroide 58 : R[142]	G[28]	B[21]
+Centroide 59 : R[19]	G[13]	B[10]
+Centroide 60 : R[191]	G[120]	B[84]
+Centroide 61 : R[80]	G[87]	B[82]
+Centroide 62 : R[39]	G[40]	B[39]
+Centroide 63 : R[71]	G[25]	B[11]
+
+Time to Kmeans is 329 seconds and 727609 microseconds
+Checksum value = 124269810
+rm: no se puede borrar 'executable': No existe el fichero o el directorio
