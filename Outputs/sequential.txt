@@ -1,17 +1,4 @@
 kmeanslib.c:
-read_file:
-     63, Loop not vectorized/parallelized: potential early exits
-write_file:
-    106, Loop not vectorized/parallelized: potential early exits
-    129, Loop not vectorized/parallelized: contains call
-getChecksum:
-    149, Loop not vectorized/parallelized: contains call
-find_closest_centroid:
-    172, Loop not vectorized: data dependency
-kmeans:
-    205, Loop not vectorized/parallelized: contains call
-    219, Loop unrolled 8 times
-    228, Loop not vectorized/parallelized: contains call
 kmeans.c:
 NEW EXECUTION, DIFFERENT K, SEQUENTIAL
 TEST = 1
@@ -29,7 +16,7 @@ Number of K-Means iterations: 9
 Centroide 0 : R[68]	G[56]	B[45]
 Centroide 1 : R[196]	G[186]	B[171]
 
-Time to Kmeans is 1 seconds and 571342 microseconds
+Time to Kmeans is 0 seconds and 746444 microseconds
 Checksum value = 6405336
 NEW EXECUTION, DIFFERENT K, SEQUENTIAL
 TEST = 1
@@ -49,7 +36,7 @@ Centroide 1 : R[160]	G[144]	B[123]
 Centroide 2 : R[218]	G[213]	B[201]
 Centroide 3 : R[97]	G[81]	B[63]
 
-Time to Kmeans is 3 seconds and 378812 microseconds
+Time to Kmeans is 2 seconds and 815153 microseconds
 Checksum value = 12689895
 NEW EXECUTION, DIFFERENT K, SEQUENTIAL
 TEST = 1
@@ -73,7 +60,7 @@ Centroide 5 : R[26]	G[19]	B[15]
 Centroide 6 : R[229]	G[226]	B[216]
 Centroide 7 : R[154]	G[142]	B[126]
 
-Time to Kmeans is 12 seconds and 720662 microseconds
+Time to Kmeans is 11 seconds and 29693 microseconds
 Checksum value = 22329779
 NEW EXECUTION, DIFFERENT K, SEQUENTIAL
 TEST = 1
@@ -105,7 +92,7 @@ Centroide 13 : R[240]	G[237]	B[228]
 Centroide 14 : R[73]	G[71]	B[63]
 Centroide 15 : R[193]	G[151]	B[109]
 
-Time to Kmeans is 21 seconds and 590638 microseconds
+Time to Kmeans is 18 seconds and 462065 microseconds
 Checksum value = 42559141
 NEW EXECUTION, DIFFERENT K, SEQUENTIAL
 TEST = 1
@@ -153,7 +140,7 @@ Centroide 29 : R[52]	G[52]	B[47]
 Centroide 30 : R[231]	G[202]	B[160]
 Centroide 31 : R[35]	G[9]	B[6]
 
-Time to Kmeans is 42 seconds and 187158 microseconds
+Time to Kmeans is 36 seconds and 647306 microseconds
 Checksum value = 73490886
 NEW EXECUTION, DIFFERENT K, SEQUENTIAL
 TEST = 1
@@ -233,6 +220,5 @@ Centroide 61 : R[80]	G[87]	B[82]
 Centroide 62 : R[39]	G[40]	B[39]
 Centroide 63 : R[71]	G[25]	B[11]
 
-Time to Kmeans is 329 seconds and 727609 microseconds
+Time to Kmeans is 277 seconds and 967916 microseconds
 Checksum value = 124269810
-rm: no se puede borrar 'executable': No existe el fichero o el directorio
